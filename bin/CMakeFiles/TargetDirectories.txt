@@ -1,0 +1,3 @@
+E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/CMakeFiles/RayTracing.dir
+E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/CMakeFiles/ALL_BUILD.dir
+E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/CMakeFiles/ZERO_CHECK.dir

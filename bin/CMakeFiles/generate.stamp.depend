@@ -1,0 +1,26 @@
+# CMake generation dependency list for this directory.
+C:/Dev/vcpkg/installed/x64-windows/share/glm/glm-config.cmake
+C:/Dev/vcpkg/scripts/buildsystems/vcpkg.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake
+E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/CMakeLists.txt
+E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/CMakeFiles/3.23.1/CMakeCCompiler.cmake
+E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/CMakeFiles/3.23.1/CMakeCXXCompiler.cmake
+E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/CMakeFiles/3.23.1/CMakeRCCompiler.cmake
+E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/CMakeFiles/3.23.1/CMakeSystem.cmake

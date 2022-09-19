@@ -1,4 +1,5 @@
 #pragma once
+#include "Def.h"
 
 class Ray {
 public:
@@ -7,12 +8,12 @@ public:
 
 	// Starting vertex, end vertex, direction vector
 	// Constructor
-	Ray(vec3 _start, vec3 _end, vec3 _dir);
+	Ray(vec3 _start,vec3 _end,vec3 _dir);
 
 private:
 
 	// Pointer to the surface, on which the starting vertex is located
-	Surface* surface;
+	//Surface* surface;
 
 	// Pointers to the previous and next ray
 	Ray* next;

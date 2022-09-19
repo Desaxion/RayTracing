@@ -1,0 +1,10 @@
+^E:\DOKUMENT\LIU\TNCG15\RAYTRACING\RAYTRACING\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/Dokument/LiU/TNCG15/RayTracing/RayTracing -BE:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin --check-stamp-file E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
