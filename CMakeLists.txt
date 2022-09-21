@@ -20,14 +20,20 @@ include_directories(
 	"${CMAKE_SOURCE_DIR}/src"
 	"${CMAKE_SOURCE_DIR}/include"
 )
-
 #Change this directory to match your system  
-include(PathToVcpkg/scripts/buildsystems/vcpkg.cmake)
+#include(/Users/Johan/Documents/Code/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake)
 
 find_package(GLM CONFIG REQUIRED)
+
+#find_package(glm CONFIG REQUIRED)
+
+#target_link_libraries(RayTracing PRIVATE glm::glm)
+
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${BIN_DIR}")
 
 add_executable(RayTracing ${SOURCE_FILES} ${HEADER_FILES})
 
 target_link_libraries(RayTracing PRIVATE glm::glm)
+
+
