@@ -5,7 +5,7 @@ class ColorDBL {
 public:
     
     ColorDBL()  {
-        color = dvec3(1.0, 1.0, 1.0);
+        color = dvec3(0.0, 1.0, 0.0);
     }
     
     ColorDBL(dvec3 inColor) : color{ inColor } {};

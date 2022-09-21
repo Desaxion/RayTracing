@@ -2,13 +2,16 @@
 #include "Def.h"
 #include "Surface.h"
 #include "Pixel.h"
-#include <ofstream>
+#include <iostream>
+//#include <ofstream>
 
 class Camera {
 public:
     
-     render();
-    
+    Camera() = default;
+     //render();
+    void captureImage();
+
 
 private:
 
@@ -16,9 +19,10 @@ private:
     dvec3 eye;
     
     //resolution of side length in pixels
-    int resolution = 800;
+    int width = 800;
+    int height = 800;
     
-    Pixel** pixels = new Pixel*[resolution];
+    Pixel* pixels = new Pixel[width*height];
    
 };
 
