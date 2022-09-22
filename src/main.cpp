@@ -5,5 +5,7 @@
 int main()	{
 	Camera myCamera;
 	myCamera.captureImage();
+    
+    std::cout << "Image captured." << std::endl;
 return 0; 
 }
