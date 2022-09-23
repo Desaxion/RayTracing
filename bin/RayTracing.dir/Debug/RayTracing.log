@@ -1,3 +1,7 @@
 ﻿cl : command line warning D9002: ignoring unknown option '-std=c++17'
+  Scene.cpp
   Camera.cpp
+  Triangle.cpp
+  main.cpp
+  Generating Code...
   RayTracing.vcxproj -> E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\bin\Debug\RayTracing.exe

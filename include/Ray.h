@@ -6,15 +6,17 @@ public:
 	// Default constructor
 	Ray() = default;
 
-    Ray(dvec3 _start, dvec3 _end) {
+    Ray(dvec4 _start, dvec4 _end) {
         //Calculating direction
-        direction = glm::normalize((_end - _start));
+		start = _start;
+		end = _end;
+        direction = glm::normalize((dvec3(_end.x, _end.y, _end.z) - dvec3(_start.x, _start.y, _start.z)));
     }
 	// Starting vertex, end vertex, direction vector
 	// Constructor
-	Ray(dvec3 _start,dvec3 _end,dvec3 _dir);
+	Ray(dvec4 _start,dvec4 _end,dvec3 _dir);
 
-    dvec3 getStart() const {return start;}
+    dvec4 getStart() const {return start;}
     
     dvec3 getDirection() const { return glm::normalize(start - end); }
     
@@ -33,8 +35,8 @@ private:
     
 
 	// Var
-	dvec3 start;
-	dvec3 end;
+	dvec4 start;
+	dvec4 end;
     dvec3 direction;
 
 	// direction från direction-klass?

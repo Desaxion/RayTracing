@@ -22,6 +22,8 @@ public:
 	Scene();
     //size_t numberOfSurfaces() const { return sceneTriangles.size() }
     
+    void buildScene();
+
     std::vector<Triangle> sceneTriangles;
     
 private:

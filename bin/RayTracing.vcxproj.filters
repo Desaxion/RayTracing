@@ -1,13 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Pixel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Triangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Camera.cpp">
+    <ClCompile Include="..\src\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -21,6 +27,9 @@
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Def.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Pixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -30,10 +39,13 @@
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Ray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Surface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\Scene.h">
+    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Triangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

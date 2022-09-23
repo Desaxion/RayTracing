@@ -9,7 +9,7 @@ public:
     Pixel() = default;
     
     //vec3 getColor() const {return color.getColor(); };
-
+    void setColor(ColorDBL _color) { color = _color; }
    
     //ColorDBL color;
     

@@ -17,15 +17,17 @@ public:
             cameraPlaneVertices[1][1] = dvec4(0.0, 1.0, 1.0, 1.0);
     };
      //render();
-    void captureImage();
+    void captureImage(const Scene &_Scene);
     
     void rayGun(const Scene &_Scene);
+
+    //void setColor(ColorDBL _color) { color = color; }
 
 private:
 
     //The camera position
-    dvec3 eye = vec3(0.0,0.0,0.0);
-    double focalLength = - 0.5;
+    dvec4 eye = vec4(0.0,0.0,0.0,0.0);
+    double focalLength = 0.5;
     //resolution of side length in pixels
     int width = 800;
     int height = 800;

@@ -370,17 +370,21 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Camera.cpp" />
+    <ClCompile Include="..\src\Scene.cpp" />
+    <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Camera.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Pixel.cpp" />
+    <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Triangle.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\main.cpp" />
-    <ClInclude Include="..\include\Scene.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Camera.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\ColorDBL.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Def.h" />
+    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Image.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Pixel.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Polygon.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Ray.h" />
+    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Scene.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Surface.h" />
+    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Triangle.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\bin\ZERO_CHECK.vcxproj">

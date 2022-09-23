@@ -9,7 +9,7 @@ public:
     
     Triangle() = delete;
     Triangle(dvec4 _v0, dvec4 _v1, dvec4 _v2, const Surface &_surface );
-    ColorDBL getColor() { surface.getColor(); }
+    ColorDBL getColor() const { return surface.getColor(); }
     int getReflModel() const { return surface.getRefl(); }
     
     bool intersection(const Ray &_ray) const;

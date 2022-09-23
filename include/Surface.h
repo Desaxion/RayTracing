@@ -8,7 +8,9 @@ public:
     
     Surface(int _reflectionModel, ColorDBL _color, double _reflectionCoeff) : reflectionModel{ _reflectionModel }, color{ _color }, reflectionCoeff{ _reflectionCoeff } {};
     
-    ColorDBL getColor() { return color; }
+    Surface(ColorDBL _color) : color{ _color } { reflectionModel = DIFFUSE, reflectionCoeff = 0.0; }
+
+    ColorDBL getColor() const { return color; }
     
     int getRefl() const { return reflectionModel; }
     
