@@ -12,7 +12,7 @@ public:
     ColorDBL getColor() { surface.getColor(); }
     int getReflModel() const { return surface.getRefl(); }
     
-    bool intersection(const Ray &_ray);
+    bool intersection(const Ray &_ray) const;
     
     
     

@@ -1,5 +1,7 @@
 #pragma once
 #include "Def.h"
+#include "Triangle.h"
+#include <vector>
 // View from above:
 // ^ = camera 1 and viewing direction (origo)
 // v = camera 2 and viewing direction
@@ -18,7 +20,12 @@ class Scene {
 public:
 
 	Scene();
-
+    //size_t numberOfSurfaces() const { return sceneTriangles.size() }
+    
+    std::vector<Triangle> sceneTriangles;
+    
 private:
 
+    
+    
 };

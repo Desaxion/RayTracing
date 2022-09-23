@@ -2,25 +2,35 @@
 #include "Def.h"
 #include "Surface.h"
 #include "Pixel.h"
+#include "Ray.h"
 #include <iostream>
+#include "Scene.h"
 //#include <ofstream>
 
 class Camera {
 public:
     
-    Camera() = default;
+    Camera() {
+            cameraPlaneVertices[0][0] = dvec4(0.0, -1.0, -1.0, 1.0);
+            cameraPlaneVertices[1][0] = dvec4(0.0, 1.0, -1.0, 1.0);
+            cameraPlaneVertices[0][1] = dvec4(0.0, -1.0, 1.0, 1.0);
+            cameraPlaneVertices[1][1] = dvec4(0.0, 1.0, 1.0, 1.0);
+    };
      //render();
     void captureImage();
-
+    
+    void rayGun(const Scene &_Scene);
 
 private:
 
     //The camera position
-    dvec3 eye;
-    
+    dvec3 eye = vec3(0.0,0.0,0.0);
+    double focalLength = - 0.5;
     //resolution of side length in pixels
     int width = 800;
     int height = 800;
+    
+    dvec3 cameraPlaneVertices[2][2];
     
     Pixel* pixels = new Pixel[width*height];
    
