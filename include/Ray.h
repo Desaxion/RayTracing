@@ -18,7 +18,7 @@ public:
 
     dvec4 getStart() const {return start;}
     
-    dvec3 getDirection() const { return glm::normalize(start - end); }
+    dvec3 getDirection() const { return glm::normalize(dvec3(start.x,start.y,start.z) - dvec3(end.x,end.y,end.z)); }
     
 private:
 

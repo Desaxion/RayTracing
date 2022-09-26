@@ -47,8 +47,8 @@ void Camera::rayGun(const Scene &_Scene) {
             //If the ray intersects one of these triangles
             if (_Scene.sceneTriangles[k].intersection(theRay)) {
                 //Set this pixels color to the triangles color
-           
                 pixels[i].setColor(_Scene.sceneTriangles[k].getColor());
+                break;
             }
         }
         
