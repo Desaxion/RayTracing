@@ -116,8 +116,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message></Message>
       <Command>setlocal
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Dev/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/Debug/RayTracing.exe -installedDir C:/Dev/vcpkg/installed/x64-windows/debug/bin -OutVariable out
 if %errorlevel% neq 0 goto :cmEnd
@@ -173,8 +172,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message></Message>
       <Command>setlocal
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Dev/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/Release/RayTracing.exe -installedDir C:/Dev/vcpkg/installed/x64-windows/bin -OutVariable out
 if %errorlevel% neq 0 goto :cmEnd
@@ -230,8 +228,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message></Message>
       <Command>setlocal
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Dev/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/MinSizeRel/RayTracing.exe -installedDir C:/Dev/vcpkg/installed/x64-windows/bin -OutVariable out
 if %errorlevel% neq 0 goto :cmEnd
@@ -286,8 +283,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message></Message>
       <Command>setlocal
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Dev/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/Dokument/LiU/TNCG15/RayTracing/RayTracing/bin/RelWithDebInfo/RayTracing.exe -installedDir C:/Dev/vcpkg/installed/x64-windows/bin -OutVariable out
 if %errorlevel% neq 0 goto :cmEnd
@@ -370,9 +366,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Scene.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Camera.cpp" />
+    <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\ColorDBL.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Pixel.cpp" />
+    <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Scene.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Triangle.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\main.cpp" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Camera.h" />

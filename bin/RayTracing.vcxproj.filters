@@ -4,16 +4,19 @@
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\ColorDBL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Pixel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Triangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

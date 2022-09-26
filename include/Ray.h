@@ -21,7 +21,7 @@ public:
     
     dvec3 getVec3Start() const {return dvec3(start.x, start.y, start.z);}
     
-    dvec3 getDirection() const { (dvec3(end.x, end.y, end.z) - dvec3(start.x, start.y, start.z)); }
+    dvec3 getDirection() const {return (dvec3(end.x, end.y, end.z) - dvec3(start.x, start.y, start.z)); }
     
     dvec3 getNormDirection() const { return glm::normalize(dvec3(start.x,start.y,start.z) - dvec3(end.x,end.y,end.z)); }
     
