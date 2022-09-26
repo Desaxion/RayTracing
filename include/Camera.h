@@ -11,10 +11,10 @@ class Camera {
 public:
     
     Camera() {
-            cameraPlaneVertices[0][0] = dvec4(0.0, -1.0, -1.0, 1.0);
-            cameraPlaneVertices[1][0] = dvec4(0.0, 1.0, -1.0, 1.0);
-            cameraPlaneVertices[0][1] = dvec4(0.0, -1.0, 1.0, 1.0);
-            cameraPlaneVertices[1][1] = dvec4(0.0, 1.0, 1.0, 1.0);
+            cameraPlaneVertices[0][0] = dvec4(focalLength, -1.0, -1.0, 1.0);
+            cameraPlaneVertices[1][0] = dvec4(focalLength, 1.0, -1.0, 1.0);
+            cameraPlaneVertices[0][1] = dvec4(focalLength, -1.0, 1.0, 1.0);
+            cameraPlaneVertices[1][1] = dvec4(focalLength, 1.0, 1.0, 1.0);
     };
      //render();
     void captureImage(const Scene &_Scene);
@@ -26,8 +26,8 @@ public:
 private:
 
     //The camera position
-    dvec4 eye = vec4(0.0,0.0,0.0,0.0);
-    double focalLength = 0.5;
+    dvec4 eye = vec4(-1.0,0.0,0.0,0.0);
+    double focalLength = 0.0;
     //resolution of side length in pixels
     int width = 800;
     int height = 800;

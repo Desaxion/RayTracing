@@ -7,9 +7,22 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		7483F5F969AD4C4BAF6C7317 /* ZERO_CHECK */ = {
+		90C7D4E8AB844EB9964C7B99 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 8BD77F4207504698B80A5B9B /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 3B7B60C789D34D4DA8C2D850 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				4114744E6494DB7F655D6756 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				2934DC07B7D344059AA83FE2 /* PBXTargetDependency */,
+				14AC5E27BB4F494CA6C2B40B /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		E1FC20FAC7794D358F674087 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8FBB989F92AB4AB69222E5D5 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				4CE79243AEDC84D0DA05D6F2 /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -18,74 +31,65 @@
 			name = ZERO_CHECK;
 			productName = ZERO_CHECK;
 		};
-		D60F15AE1DE149BFA39A46A9 /* ALL_BUILD */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 2407B499F8414664AB4E7270 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
-			buildPhases = (
-				4114744E6494DB7F655D6756 /* Generate CMakeFiles/ALL_BUILD */,
-			);
-			dependencies = (
-				5C99164E76E34C5B9CB4805C /* PBXTargetDependency */,
-				993BA854AA6D4DB68B4B8F04 /* PBXTargetDependency */,
-			);
-			name = ALL_BUILD;
-			productName = ALL_BUILD;
-		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		040FAB5F28DC75B5000E9158 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 040FAB5E28DC75B5000E9158 /* Triangle.cpp */; };
-		3752CE3C42F34E1FB677107B /* Pixel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F5421E7E85343119FF2E0BD /* Pixel.cpp */; };
-		63C7D1A6889B49E3B464E16E /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E80AE052E6C4C2D83566A38 /* Camera.cpp */; };
-		F01E0D173F3A45EDB94AD025 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C518AE2657B479AB18DCC23 /* main.cpp */; };
+		045FBFB528E1E431001A586E /* ColorDBL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 045FBFB428E1E431001A586E /* ColorDBL.cpp */; };
+		9EC2AFC093634BA1B27BB584 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 166B75AD17094BB6B62C9326 /* Scene.cpp */; };
+		CAFA9AA6CD534AD889E961D9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83D2185054064433842C03A0 /* main.cpp */; };
+		E5D21EAEBB5D48FF8D87053A /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25642214D870454589A0F07F /* Triangle.cpp */; };
+		ECAC478154A140E1BE0B1AA1 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD8EBB5D94164027B3AD714F /* Camera.cpp */; };
+		FB673A40CCAC42D880FE99FD /* Pixel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B40EBF3275C64255A02ABEDF /* Pixel.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0DA64CFF9D0547C489B17EA7 /* PBXContainerItemProxy */ = {
+		45CD148091CF4CC7AB5896E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = ECAC037AD0694B529341433D /* Project object */;
+			containerPortal = D292AEFB906744DBABF5CA39 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7483F5F969AD4C4BAF6C7317;
+			remoteGlobalIDString = E1FC20FAC7794D358F674087;
 			remoteInfo = ZERO_CHECK;
 		};
-		642D76C6A03F46BF9CEB1E56 /* PBXContainerItemProxy */ = {
+		7EE327A1EEF049AE8DD0739B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = ECAC037AD0694B529341433D /* Project object */;
+			containerPortal = D292AEFB906744DBABF5CA39 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 701066D6919E4870A0BD797F;
+			remoteGlobalIDString = 43F2333BACA649229BD4A3B2;
 			remoteInfo = RayTracing;
 		};
-		92ECD0F97F3A4EEC831B8139 /* PBXContainerItemProxy */ = {
+		904A105ECF21457188C4EB61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = ECAC037AD0694B529341433D /* Project object */;
+			containerPortal = D292AEFB906744DBABF5CA39 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7483F5F969AD4C4BAF6C7317;
+			remoteGlobalIDString = E1FC20FAC7794D358F674087;
 			remoteInfo = ZERO_CHECK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		040FAB5A28DC5140000E9158 /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Triangle.h; path = include/Triangle.h; sourceTree = "<group>"; };
-		040FAB5E28DC75B5000E9158 /* Triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Triangle.cpp; path = src/Triangle.cpp; sourceTree = "<group>"; };
-		0F5421E7E85343119FF2E0BD /* Pixel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Pixel.cpp; path = src/Pixel.cpp; sourceTree = SOURCE_ROOT; };
-		2DF6D5F1545A4542BDD52A51 /* Camera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Camera.h; path = include/Camera.h; sourceTree = SOURCE_ROOT; };
-		3F6A88E25D5A4B648DD68446 /* Def.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Def.h; path = include/Def.h; sourceTree = SOURCE_ROOT; };
-		42A72F8556D1490D8429CD4A /* Surface.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Surface.h; path = include/Surface.h; sourceTree = SOURCE_ROOT; };
-		43885CCE7B0A4E6B969037DE /* Pixel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Pixel.h; path = include/Pixel.h; sourceTree = SOURCE_ROOT; };
-		4E80AE052E6C4C2D83566A38 /* Camera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Camera.cpp; path = src/Camera.cpp; sourceTree = SOURCE_ROOT; };
-		4FBACB651D964C81BF1F61C1 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		513B5A8B2A7E43EBB4D8F487 /* RayTracing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = RayTracing; sourceTree = BUILT_PRODUCTS_DIR; };
-		57A7B66D6657446099FB3FEE /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		6637600F246B44DF9BFFB564 /* Image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Image.h; path = include/Image.h; sourceTree = SOURCE_ROOT; };
-		68320264CC244803B1F051F7 /* Scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Scene.h; path = include/Scene.h; sourceTree = SOURCE_ROOT; };
-		69F55F0D80104377834C1B98 /* ColorDBL.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ColorDBL.h; path = include/ColorDBL.h; sourceTree = SOURCE_ROOT; };
-		6B95B2F7D8D947C3AE63BA67 /* Ray.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Ray.h; path = include/Ray.h; sourceTree = SOURCE_ROOT; };
-		9C518AE2657B479AB18DCC23 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
-		AFC1B6B4028C4106950959B2 /* Polygon.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Polygon.h; path = include/Polygon.h; sourceTree = SOURCE_ROOT; };
+		045FBFB428E1E431001A586E /* ColorDBL.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ColorDBL.cpp; path = src/ColorDBL.cpp; sourceTree = "<group>"; };
+		136A7174105948108689553A /* Surface.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Surface.h; path = include/Surface.h; sourceTree = SOURCE_ROOT; };
+		166B75AD17094BB6B62C9326 /* Scene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Scene.cpp; path = src/Scene.cpp; sourceTree = SOURCE_ROOT; };
+		25642214D870454589A0F07F /* Triangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Triangle.cpp; path = src/Triangle.cpp; sourceTree = SOURCE_ROOT; };
+		2A3A9217E8544C649F867508 /* Camera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Camera.h; path = include/Camera.h; sourceTree = SOURCE_ROOT; };
+		36FCF49EC5B14EE68E7CEF1B /* Triangle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Triangle.h; path = include/Triangle.h; sourceTree = SOURCE_ROOT; };
+		4DF1AE95795A45429ABBF7A3 /* Image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Image.h; path = include/Image.h; sourceTree = SOURCE_ROOT; };
+		558CAB2760D84F9FAF62CBE4 /* Pixel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Pixel.h; path = include/Pixel.h; sourceTree = SOURCE_ROOT; };
+		83D2185054064433842C03A0 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		9463AA316041460CA4EC877B /* Ray.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Ray.h; path = include/Ray.h; sourceTree = SOURCE_ROOT; };
+		9D365A5135564B15B8EA0331 /* RayTracing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = RayTracing; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EBB595E3F844DE58E78047C /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		AAA70D3E266641968E3CD3C6 /* Def.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Def.h; path = include/Def.h; sourceTree = SOURCE_ROOT; };
+		AC0BD202F914439BA7CE091D /* Scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Scene.h; path = include/Scene.h; sourceTree = SOURCE_ROOT; };
+		B40EBF3275C64255A02ABEDF /* Pixel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Pixel.cpp; path = src/Pixel.cpp; sourceTree = SOURCE_ROOT; };
+		B51CC9D88C1941AFA4C675B1 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C2BC185AD1E84A288EF8D808 /* Polygon.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Polygon.h; path = include/Polygon.h; sourceTree = SOURCE_ROOT; };
+		DD8EBB5D94164027B3AD714F /* Camera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Camera.cpp; path = src/Camera.cpp; sourceTree = SOURCE_ROOT; };
+		FBD0C179B962460F9403F8B5 /* ColorDBL.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ColorDBL.h; path = include/ColorDBL.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		207E7FCAA1024DE9A8FE1C62 /* Frameworks */ = {
+		43914EC4B6094CD8A527EA8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -95,114 +99,116 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09682C8C3E884DD18D0DD293 /* ALL_BUILD */ = {
+		06144EF512B24F93871A4BB4 /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
-				422CCF43BC294BC2B380182D /* CMake Rules */,
-				4FBACB651D964C81BF1F61C1 /* CMakeLists.txt */,
+				2A3A9217E8544C649F867508 /* Camera.h */,
+				FBD0C179B962460F9403F8B5 /* ColorDBL.h */,
+				AAA70D3E266641968E3CD3C6 /* Def.h */,
+				4DF1AE95795A45429ABBF7A3 /* Image.h */,
+				558CAB2760D84F9FAF62CBE4 /* Pixel.h */,
+				C2BC185AD1E84A288EF8D808 /* Polygon.h */,
+				9463AA316041460CA4EC877B /* Ray.h */,
+				AC0BD202F914439BA7CE091D /* Scene.h */,
+				136A7174105948108689553A /* Surface.h */,
+				36FCF49EC5B14EE68E7CEF1B /* Triangle.h */,
 			);
-			name = ALL_BUILD;
+			name = "Header Files";
 			sourceTree = "<group>";
 		};
-		287EA959F89B47F3B4296A8D /* Frameworks */ = {
+		48D8AD564F30415AB5E6C4F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		422CCF43BC294BC2B380182D /* CMake Rules */ = {
+		5DB83A272F854AF6A77499D0 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD8EBB5D94164027B3AD714F /* Camera.cpp */,
+				B40EBF3275C64255A02ABEDF /* Pixel.cpp */,
+				166B75AD17094BB6B62C9326 /* Scene.cpp */,
+				25642214D870454589A0F07F /* Triangle.cpp */,
+				83D2185054064433842C03A0 /* main.cpp */,
+				045FBFB428E1E431001A586E /* ColorDBL.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		71BE1F556DF4404EA077AB63 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				D5F11CC7FBAA42DEAEC09AE9 /* CMake Rules */,
+				9EBB595E3F844DE58E78047C /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		AF059E18BC544ED5AB9F5CCE /* RayTracing */ = {
+			isa = PBXGroup;
+			children = (
+				5DB83A272F854AF6A77499D0 /* Source Files */,
+				06144EF512B24F93871A4BB4 /* Header Files */,
+				B51CC9D88C1941AFA4C675B1 /* CMakeLists.txt */,
+			);
+			name = RayTracing;
+			sourceTree = "<group>";
+		};
+		B3D8828E31634937994E4C62 = {
+			isa = PBXGroup;
+			children = (
+				AF059E18BC544ED5AB9F5CCE /* RayTracing */,
+				71BE1F556DF4404EA077AB63 /* ALL_BUILD */,
+				B64E3E1A9C914727B9AEEF55 /* Products */,
+				48D8AD564F30415AB5E6C4F6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B64E3E1A9C914727B9AEEF55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D365A5135564B15B8EA0331 /* RayTracing */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5F11CC7FBAA42DEAEC09AE9 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		4F525933AEE74B46BE894B94 /* Header Files */ = {
-			isa = PBXGroup;
-			children = (
-				2DF6D5F1545A4542BDD52A51 /* Camera.h */,
-				69F55F0D80104377834C1B98 /* ColorDBL.h */,
-				3F6A88E25D5A4B648DD68446 /* Def.h */,
-				6637600F246B44DF9BFFB564 /* Image.h */,
-				43885CCE7B0A4E6B969037DE /* Pixel.h */,
-				AFC1B6B4028C4106950959B2 /* Polygon.h */,
-				6B95B2F7D8D947C3AE63BA67 /* Ray.h */,
-				68320264CC244803B1F051F7 /* Scene.h */,
-				42A72F8556D1490D8429CD4A /* Surface.h */,
-				040FAB5A28DC5140000E9158 /* Triangle.h */,
-			);
-			name = "Header Files";
-			sourceTree = "<group>";
-		};
-		58BDBB7767AB455ABC635B9D /* Source Files */ = {
-			isa = PBXGroup;
-			children = (
-				4E80AE052E6C4C2D83566A38 /* Camera.cpp */,
-				0F5421E7E85343119FF2E0BD /* Pixel.cpp */,
-				9C518AE2657B479AB18DCC23 /* main.cpp */,
-				040FAB5E28DC75B5000E9158 /* Triangle.cpp */,
-			);
-			name = "Source Files";
-			sourceTree = "<group>";
-		};
-		596D8EA949A84C90A5866B2F /* RayTracing */ = {
-			isa = PBXGroup;
-			children = (
-				58BDBB7767AB455ABC635B9D /* Source Files */,
-				4F525933AEE74B46BE894B94 /* Header Files */,
-				57A7B66D6657446099FB3FEE /* CMakeLists.txt */,
-			);
-			name = RayTracing;
-			sourceTree = "<group>";
-		};
-		9F37DF10E62D4D698738C66F = {
-			isa = PBXGroup;
-			children = (
-				596D8EA949A84C90A5866B2F /* RayTracing */,
-				09682C8C3E884DD18D0DD293 /* ALL_BUILD */,
-				C6A3804FD5314E6EB54E8098 /* Products */,
-				287EA959F89B47F3B4296A8D /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		C6A3804FD5314E6EB54E8098 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				513B5A8B2A7E43EBB4D8F487 /* RayTracing */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		701066D6919E4870A0BD797F /* RayTracing */ = {
+		43F2333BACA649229BD4A3B2 /* RayTracing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32686D10E80A4FE080C9FF50 /* Build configuration list for PBXNativeTarget "RayTracing" */;
+			buildConfigurationList = 446C2CB0C5DE4FA4B71255B2 /* Build configuration list for PBXNativeTarget "RayTracing" */;
 			buildPhases = (
-				7DE361FA3114450D81668E7E /* Sources */,
-				207E7FCAA1024DE9A8FE1C62 /* Frameworks */,
+				E4B69F3400F749D39520E056 /* Sources */,
+				43914EC4B6094CD8A527EA8C /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				39E016FA9F664EC394B7C55C /* PBXTargetDependency */,
+				1AAA7EAE8A2647F9833825A8 /* PBXTargetDependency */,
 			);
 			name = RayTracing;
 			productName = RayTracing;
-			productReference = 513B5A8B2A7E43EBB4D8F487 /* RayTracing */;
+			productReference = 9D365A5135564B15B8EA0331 /* RayTracing */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		ECAC037AD0694B529341433D /* Project object */ = {
+		D292AEFB906744DBABF5CA39 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = 804AEA9F133E49DE9B95003A /* Build configuration list for PBXProject "RayTracing" */;
+			buildConfigurationList = C854B4A1AB5B435AB54D589E /* Build configuration list for PBXProject "RayTracing" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -210,13 +216,13 @@
 				en,
 				Base,
 			);
-			mainGroup = 9F37DF10E62D4D698738C66F;
+			mainGroup = B3D8828E31634937994E4C62;
 			projectDirPath = /Users/Johan/Documents/Liu/TNCG15/RayTracing;
 			projectRoot = "";
 			targets = (
-				D60F15AE1DE149BFA39A46A9 /* ALL_BUILD */,
-				701066D6919E4870A0BD797F /* RayTracing */,
-				7483F5F969AD4C4BAF6C7317 /* ZERO_CHECK */,
+				90C7D4E8AB844EB9964C7B99 /* ALL_BUILD */,
+				43F2333BACA649229BD4A3B2 /* RayTracing */,
+				E1FC20FAC7794D358F674087 /* ZERO_CHECK */,
 			);
 		};
 /* End PBXProject section */
@@ -259,39 +265,110 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7DE361FA3114450D81668E7E /* Sources */ = {
+		E4B69F3400F749D39520E056 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63C7D1A6889B49E3B464E16E /* Camera.cpp in Sources */,
-				3752CE3C42F34E1FB677107B /* Pixel.cpp in Sources */,
-				F01E0D173F3A45EDB94AD025 /* main.cpp in Sources */,
-				040FAB5F28DC75B5000E9158 /* Triangle.cpp in Sources */,
+				ECAC478154A140E1BE0B1AA1 /* Camera.cpp in Sources */,
+				FB673A40CCAC42D880FE99FD /* Pixel.cpp in Sources */,
+				045FBFB528E1E431001A586E /* ColorDBL.cpp in Sources */,
+				9EC2AFC093634BA1B27BB584 /* Scene.cpp in Sources */,
+				E5D21EAEBB5D48FF8D87053A /* Triangle.cpp in Sources */,
+				CAFA9AA6CD534AD889E961D9 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		39E016FA9F664EC394B7C55C /* PBXTargetDependency */ = {
+		14AC5E27BB4F494CA6C2B40B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7483F5F969AD4C4BAF6C7317 /* ZERO_CHECK */;
-			targetProxy = 92ECD0F97F3A4EEC831B8139 /* PBXContainerItemProxy */;
+			target = E1FC20FAC7794D358F674087 /* ZERO_CHECK */;
+			targetProxy = 904A105ECF21457188C4EB61 /* PBXContainerItemProxy */;
 		};
-		5C99164E76E34C5B9CB4805C /* PBXTargetDependency */ = {
+		1AAA7EAE8A2647F9833825A8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7483F5F969AD4C4BAF6C7317 /* ZERO_CHECK */;
-			targetProxy = 0DA64CFF9D0547C489B17EA7 /* PBXContainerItemProxy */;
+			target = E1FC20FAC7794D358F674087 /* ZERO_CHECK */;
+			targetProxy = 45CD148091CF4CC7AB5896E4 /* PBXContainerItemProxy */;
 		};
-		993BA854AA6D4DB68B4B8F04 /* PBXTargetDependency */ = {
+		2934DC07B7D344059AA83FE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 701066D6919E4870A0BD797F /* RayTracing */;
-			targetProxy = 642D76C6A03F46BF9CEB1E56 /* PBXContainerItemProxy */;
+			target = 43F2333BACA649229BD4A3B2 /* RayTracing */;
+			targetProxy = 7EE327A1EEF049AE8DD0739B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0230601B37E44EE69591C895 /* RelWithDebInfo */ = {
+		024B660958754F139ADDB75F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		03675114848B43A5955132B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		25496FC6DA714314BFA295B5 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		2E9F96828FF2421F9E063695 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -334,318 +411,7 @@
 			};
 			name = RelWithDebInfo;
 		};
-		1FDA07B91CCB4BD08AD70F72 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " $(inherited)";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = "$(inherited)";
-			};
-			name = Debug;
-		};
-		20C209C740FE42BC924201EA /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/build;
-			};
-			name = RelWithDebInfo;
-		};
-		39B9BDB178B14676820F1896 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/build;
-			};
-			name = Debug;
-		};
-		43D2081E60594DD6B932DE87 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " $(inherited)";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = "$(inherited)";
-			};
-			name = RelWithDebInfo;
-		};
-		4E34AEC0F3904790AC3975B9 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/MinSizeRel;
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (
-					/Users/Johan/Documents/Liu/TNCG15/RayTracing/include,
-					/Users/Johan/Documents/Liu/TNCG15/RayTracing/src,
-					"$(inherited)",
-				);
-				INSTALL_PATH = "";
-				OTHER_CPLUSPLUSFLAGS = (
-					"-std=c++17",
-					"-DNDEBUG",
-				);
-				OTHER_LDFLAGS = (
-					"-Wl,-search_paths_first",
-					"-Wl,-headerpad_max_install_names",
-					"$(inherited)",
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = RayTracing;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
-				SYSTEM_HEADER_SEARCH_PATHS = (
-					"/Users/Johan/Documents/Code/vcpkg/vcpkg/installed/x64-osx/include",
-					"$(inherited)",
-				);
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = "$(inherited)";
-			};
-			name = MinSizeRel;
-		};
-		5F111C9046314C3C84F53F67 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/Debug;
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (
-					/Users/Johan/Documents/Liu/TNCG15/RayTracing/include,
-					/Users/Johan/Documents/Liu/TNCG15/RayTracing/src,
-					"$(inherited)",
-				);
-				INSTALL_PATH = "";
-				OTHER_CPLUSPLUSFLAGS = " -std=c++17    ";
-				OTHER_LDFLAGS = (
-					"-Wl,-search_paths_first",
-					"-Wl,-headerpad_max_install_names",
-					"$(inherited)",
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = RayTracing;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
-				SYSTEM_HEADER_SEARCH_PATHS = (
-					"/Users/Johan/Documents/Code/vcpkg/vcpkg/installed/x64-osx/include",
-					"$(inherited)",
-				);
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = "$(inherited)";
-			};
-			name = Debug;
-		};
-		5F11B96EEED841239C8C586B /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " $(inherited)";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = "$(inherited)";
-			};
-			name = MinSizeRel;
-		};
-		64D91A6EDBD047499AB9C494 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " $(inherited)";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = "$(inherited)";
-			};
-			name = Release;
-		};
-		7B73D9D38D994F50BE2F2AAA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " $(inherited)";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = "$(inherited)";
-			};
-			name = Release;
-		};
-		862DB73B6A7B4C6CA75C211E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " $(inherited)";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = "$(inherited)";
-			};
-			name = Debug;
-		};
-		9A4C1C873CEA4101B50BB5F9 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/build;
-			};
-			name = MinSizeRel;
-		};
-		AB30BCAE2443480780F01CAE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/build;
-			};
-			name = Release;
-		};
-		B1BF2CEBA27C4F27A1C8D95F /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " $(inherited)";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = "$(inherited)";
-			};
-			name = RelWithDebInfo;
-		};
-		C5D81A4307504742AFA2B413 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " $(inherited)";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = "$(inherited)";
-			};
-			name = MinSizeRel;
-		};
-		DB7221F5E7714DD7AC7C4117 /* Release */ = {
+		4851FECD65604658932FA5B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -688,54 +454,296 @@
 			};
 			name = Release;
 		};
+		6E008C4DAD7749E7BBF96D42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Johan/Documents/Liu/TNCG15/RayTracing/include,
+					/Users/Johan/Documents/Liu/TNCG15/RayTracing/src,
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++17    ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RayTracing;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"/Users/Johan/Documents/Code/vcpkg/vcpkg/installed/x64-osx/include",
+					"$(inherited)",
+				);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		8EE89AC3B07B4C73873ABDF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		923AB4EF49974B65A59B8FB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/build;
+			};
+			name = Release;
+		};
+		94429B85B76A4BA281CE1645 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		991B7048B3754A169CD8BF6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/build;
+			};
+			name = Debug;
+		};
+		99D478D5CFB5436EA32BA10D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		9D11FCA6668A42579E4789C9 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Johan/Documents/Liu/TNCG15/RayTracing/include,
+					/Users/Johan/Documents/Liu/TNCG15/RayTracing/src,
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++17",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RayTracing;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"/Users/Johan/Documents/Code/vcpkg/vcpkg/installed/x64-osx/include",
+					"$(inherited)",
+				);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		A250B306D1984035A8D40704 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/build;
+			};
+			name = RelWithDebInfo;
+		};
+		AA882E37C6F4467582D6379D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		CADA3268840B4ACD952EA78F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		D4F934A8135E45E7B683E19F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = /Users/Johan/Documents/Liu/TNCG15/RayTracing/bin/build;
+			};
+			name = MinSizeRel;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2407B499F8414664AB4E7270 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		3B7B60C789D34D4DA8C2D850 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				862DB73B6A7B4C6CA75C211E /* Debug */,
-				64D91A6EDBD047499AB9C494 /* Release */,
-				5F11B96EEED841239C8C586B /* MinSizeRel */,
-				B1BF2CEBA27C4F27A1C8D95F /* RelWithDebInfo */,
+				99D478D5CFB5436EA32BA10D /* Debug */,
+				8EE89AC3B07B4C73873ABDF6 /* Release */,
+				94429B85B76A4BA281CE1645 /* MinSizeRel */,
+				25496FC6DA714314BFA295B5 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		32686D10E80A4FE080C9FF50 /* Build configuration list for PBXNativeTarget "RayTracing" */ = {
+		446C2CB0C5DE4FA4B71255B2 /* Build configuration list for PBXNativeTarget "RayTracing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5F111C9046314C3C84F53F67 /* Debug */,
-				DB7221F5E7714DD7AC7C4117 /* Release */,
-				4E34AEC0F3904790AC3975B9 /* MinSizeRel */,
-				0230601B37E44EE69591C895 /* RelWithDebInfo */,
+				6E008C4DAD7749E7BBF96D42 /* Debug */,
+				4851FECD65604658932FA5B2 /* Release */,
+				9D11FCA6668A42579E4789C9 /* MinSizeRel */,
+				2E9F96828FF2421F9E063695 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		804AEA9F133E49DE9B95003A /* Build configuration list for PBXProject "RayTracing" */ = {
+		8FBB989F92AB4AB69222E5D5 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39B9BDB178B14676820F1896 /* Debug */,
-				AB30BCAE2443480780F01CAE /* Release */,
-				9A4C1C873CEA4101B50BB5F9 /* MinSizeRel */,
-				20C209C740FE42BC924201EA /* RelWithDebInfo */,
+				CADA3268840B4ACD952EA78F /* Debug */,
+				03675114848B43A5955132B4 /* Release */,
+				024B660958754F139ADDB75F /* MinSizeRel */,
+				AA882E37C6F4467582D6379D /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		8BD77F4207504698B80A5B9B /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		C854B4A1AB5B435AB54D589E /* Build configuration list for PBXProject "RayTracing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1FDA07B91CCB4BD08AD70F72 /* Debug */,
-				7B73D9D38D994F50BE2F2AAA /* Release */,
-				C5D81A4307504742AFA2B413 /* MinSizeRel */,
-				43D2081E60594DD6B932DE87 /* RelWithDebInfo */,
+				991B7048B3754A169CD8BF6A /* Debug */,
+				923AB4EF49974B65A59B8FB0 /* Release */,
+				D4F934A8135E45E7B683E19F /* MinSizeRel */,
+				A250B306D1984035A8D40704 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = ECAC037AD0694B529341433D /* Project object */;
+	rootObject = D292AEFB906744DBABF5CA39 /* Project object */;
 }

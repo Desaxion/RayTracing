@@ -20,6 +20,6 @@ public:
 private:
     //Vertices are passed as vec4s, and the last item in the list is a 1.0.
     std::array<dvec4, 3> vertices;
-    direction normal;
+    dvec3 normal;
     Surface surface;
 };

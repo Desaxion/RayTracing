@@ -62,19 +62,18 @@ void Scene::buildScene() {
 	        bLow  o------------------o aLow
 	
 	*/
+    //Wall between a and b
+    sceneTriangles.push_back(Triangle(aLow, aHigh, bLow, red));
+    sceneTriangles.push_back(Triangle(bLow, aHigh, bHigh, red));
 
-	//Wall between a and b
-	sceneTriangles.push_back(Triangle(aLow, aHigh, bLow, red));
-	sceneTriangles.push_back(Triangle(bLow, aHigh, bHigh, red));
-
-	//Wall between b and c
-	sceneTriangles.push_back(Triangle(bLow, bHigh, cLow, green));
-	sceneTriangles.push_back(Triangle(cLow, bHigh, cHigh, green));
+    //Wall between b and c
+    sceneTriangles.push_back(Triangle(bLow, bHigh, cLow, green));
+    sceneTriangles.push_back(Triangle(cLow, bHigh, cHigh, green));
+    
+    //Wall between c and d
+    sceneTriangles.push_back(Triangle(cLow, cHigh, dLow, blue));
+    sceneTriangles.push_back(Triangle(dLow, cHigh, dHigh, blue));
 	
-	//Wall between c and d
-	sceneTriangles.push_back(Triangle(cLow, cHigh, dLow, blue));
-	sceneTriangles.push_back(Triangle(dLow, cHigh, dHigh, blue));
-
 	//Wall between d and e
 	sceneTriangles.push_back(Triangle(dLow, dHigh, eLow, black));
 	sceneTriangles.push_back(Triangle(eLow, dHigh, eHigh, black));
@@ -99,4 +98,8 @@ void Scene::buildScene() {
 	sceneTriangles.push_back(Triangle(cHigh, bHigh, fHigh, magenta));
 	sceneTriangles.push_back(Triangle(cHigh, fHigh, eHigh, magenta));
 	sceneTriangles.push_back(Triangle(dHigh, cHigh, eHigh, magenta));
+    
+    
+
+    
 }														

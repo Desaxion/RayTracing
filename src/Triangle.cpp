@@ -6,11 +6,11 @@ Triangle::Triangle(dvec4 _v0, dvec4 _v1, dvec4 _v2, const Surface& _surface) {
 	surface = _surface;
 
 	//Creating two vectors that are to be crossed
-	direction v0v1 = vertices[1] - vertices[0];
+	direction v0v1 = vertices[0] - vertices[1];
 	direction v1v2 = vertices[2] - vertices[1];
 
 	//Calculating normal using cross product
-	normal = glm::normalize(glm::cross(v0v1, v1v2));
+	normal = glm::normalize(glm::cross(dvec3(v1v2.x,v1v2.y,v1v2.z), dvec3(v0v1.x,v0v1.y,v0v1.z)));
 
 }
 
@@ -18,7 +18,7 @@ Triangle::Triangle(dvec4 _v0, dvec4 _v1, dvec4 _v2, const Surface& _surface) {
 bool Triangle::intersection(const Ray& _ray) const {
 	
 	//Create vec3:s of all the incoming data
-	dvec3 T = dvec3(_ray.getStart().x, _ray.getStart().y, _ray.getStart().z) - dvec3(vertices[0].x, vertices[0].y, vertices[0].z);
+	/*dvec3 T = dvec3(_ray.getStart().x, _ray.getStart().y, _ray.getStart().z) - dvec3(vertices[0].x, vertices[0].y, vertices[0].z);
 
 	dvec4 E1temp = vertices[1] - vertices[0];
 	dvec4 E2temp = vertices[2] - vertices[0];
@@ -41,5 +41,32 @@ bool Triangle::intersection(const Ray& _ray) const {
 			return true;
 		}
 	//}
-	return false;
+	return false;*/
+    
+    dvec3 E1 = dvec3(vertices[1].x, vertices[1].y, vertices[1].z ) - dvec3(vertices[0].x, vertices[0].y, vertices[0].z );
+    dvec3 E2 = dvec3(vertices[2].x, vertices[2].y, vertices[2].z ) - dvec3(vertices[0].x, vertices[0].y, vertices[0].z );
+    dvec3 h = glm::cross(_ray.getDirection(),E2);
+    double a = glm::dot(E1,h);
+    if(a > -EPSILON && a < EPSILON){ //Ray is parallel to triangle
+        return false;
+    }
+    double f = 1.0/a;
+    dvec3 s = _ray.getVec3Start() - dvec3(vertices[0].x, vertices[0].y, vertices[0].z);
+    double u = f * glm::dot(s,h);
+    
+    if(u < 0.0 || u > 1.0){ return false; }
+    
+    dvec3 q = glm::cross(s, E1);
+    
+    double v = f* glm::dot(_ray.getDirection(),q);
+    
+    if(v < 0.0 || u + v > 1.0) {return false;}
+    double t = f * glm::dot(E2, q);
+    if(t> EPSILON)
+    {
+        dvec3 intersectionPoint = _ray.getVec3Start() + _ray.getDirection() * t;
+        return true;
+    }
+    else { return false; }
+    
 }

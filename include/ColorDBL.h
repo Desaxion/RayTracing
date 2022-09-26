@@ -1,11 +1,20 @@
 #pragma once
 #include "Def.h"
+#include <stdlib.h>     /* srand, rand */
+#include <ctime>
 
 class ColorDBL {
 public:
     
     ColorDBL()  {
-        color = dvec3(0.0, 1.0, 0.0);
+        
+        
+        double colors[3] = {0.0, 0.0, 0.0};
+        srand(std::time(nullptr));
+        
+        colors[rand() % 3] = 1.0;
+      
+        color = dvec3(colors[0],colors[1], colors[2]);//dvec3(randomDouble(), randomDouble(), randomDouble());
     }
 
     ColorDBL(double r, double g, double b) {
@@ -19,5 +28,6 @@ public:
 
 
 private:
+    double randomDouble();
     dvec3 color;
 };
