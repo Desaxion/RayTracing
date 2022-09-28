@@ -15,7 +15,7 @@ Triangle::Triangle(dvec4 _v0, dvec4 _v1, dvec4 _v2, const Surface& _surface) {
 }
 
 //Function to intersect the triangle
-bool Triangle::intersection(const Ray& _ray) const {
+bool Triangle::intersection(Ray _ray, dvec4& intersectionPoint) {
 	
 	//Create vec3:s of all the incoming data
 	/*dvec3 T = dvec3(_ray.getStart().x, _ray.getStart().y, _ray.getStart().z) - dvec3(vertices[0].x, vertices[0].y, vertices[0].z);
@@ -47,6 +47,8 @@ bool Triangle::intersection(const Ray& _ray) const {
     dvec3 E2 = dvec3(vertices[2].x, vertices[2].y, vertices[2].z ) - dvec3(vertices[0].x, vertices[0].y, vertices[0].z );
     dvec3 h = glm::cross(_ray.getDirection(),E2);
     double a = glm::dot(E1,h);
+
+
     if(a > -EPSILON && a < EPSILON){ //Ray is parallel to triangle
         return false;
     }
@@ -60,13 +62,20 @@ bool Triangle::intersection(const Ray& _ray) const {
     
     double v = f* glm::dot(_ray.getDirection(),q);
     
-    if(v < 0.0 || u + v > 1.0) {return false;}
+    if(v < 0.0 || u + v > 1.0) { return false; }
     double t = f * glm::dot(E2, q);
     if(t> EPSILON)
     {
-        dvec3 intersectionPoint = _ray.getVec3Start() + _ray.getDirection() * t;
+        dvec3 temp = _ray.getVec3Start() + _ray.getDirection() * t;
+        intersectionPoint = dvec4(temp.x, temp.y, temp.z, 1.0);
         return true;
     }
-    else { return false; }
+  
+
+   else { return false; }
     
+}
+
+dvec3 Triangle::getNormDirection() {
+    return glm::normalize(normal);
 }

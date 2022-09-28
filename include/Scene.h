@@ -1,6 +1,7 @@
 #pragma once
 #include "Def.h"
 #include "Triangle.h"
+#include "Sphere.h"
 #include <vector>
 // View from above:
 // ^ = camera 1 and viewing direction (origo)
@@ -24,10 +25,14 @@ public:
     
     void buildScene();
 
-    std::vector<Triangle> sceneTriangles;
-    
+   std::vector<Triangle> sceneTriangles;
+    std::vector<Sphere> sceneSpheres;
+
+    //Must use pointers since abstract classes cant be instantiated
+    std::vector<Shape*> sceneShapes;
+
 private:
 
-    
+     
     
 };

@@ -22,9 +22,9 @@ void Scene::buildScene() {
 //          \ /   <-- back
 //           d
 //
-//    ^ z
+//    ^ x
 //    |
-//    |----> x
+//    |----> z
 
 
 	//Creating a whole bunch of vertices
@@ -46,6 +46,7 @@ void Scene::buildScene() {
 	Surface gray(ColorDBL(0.5, 0.5, 0.5));
 	Surface yellow(ColorDBL(1.0, 1.0, 0.0));
 	Surface magenta(ColorDBL(1.0, 0.0, 1.0));
+	Surface cyan(ColorDBL(0.0, 1.0, 1.0));
 
 	//Create all the triangles next
 	
@@ -63,7 +64,7 @@ void Scene::buildScene() {
 	
 	*/
     //Wall between a and b
-    sceneTriangles.push_back(Triangle(aLow, aHigh, bLow, red));
+ /*   sceneTriangles.push_back(Triangle(aLow, aHigh, bLow, red));
     sceneTriangles.push_back(Triangle(bLow, aHigh, bHigh, red));
 
     //Wall between b and c
@@ -99,7 +100,49 @@ void Scene::buildScene() {
 	sceneTriangles.push_back(Triangle(cHigh, fHigh, eHigh, magenta));
 	sceneTriangles.push_back(Triangle(dHigh, cHigh, eHigh, magenta));
     
-    
 
+	sceneSpheres.push_back(Sphere(dvec4(3.0, 0.0, 0.0, 1.0), 1.0, cyan));
     
+	*/
+	sceneShapes.push_back(new Sphere(dvec4(3.0, 0.0, 0.0, 1.0), 1.0, cyan));
+
+	sceneShapes.push_back(new Triangle(aLow, aHigh, bLow, red));
+	sceneShapes.push_back(new Triangle(bLow, aHigh, bHigh, red));
+
+	//Wall between b and c
+	sceneShapes.push_back(new Triangle(bLow, bHigh, cLow, green));
+	sceneShapes.push_back(new Triangle(cLow, bHigh, cHigh, green));
+
+	//Wall between c and d
+	sceneShapes.push_back(new Triangle(cLow, cHigh, dLow, blue));
+	sceneShapes.push_back(new Triangle(dLow, cHigh, dHigh, blue));
+
+	//Wall between d and e
+	sceneShapes.push_back(new Triangle(dLow, dHigh, eLow, black));
+	sceneShapes.push_back(new Triangle(eLow, dHigh, eHigh, black));
+
+	//Wall between e and f
+	sceneShapes.push_back(new Triangle(eLow, eHigh, fLow, white));
+	sceneShapes.push_back(new Triangle(fLow, eHigh, fHigh, white));
+
+	//Wall between f and a
+	sceneShapes.push_back(new Triangle(fLow, fHigh, aLow, gray));
+	sceneShapes.push_back(new Triangle(aLow, fHigh, aHigh, gray));
+
+
+	//Floor
+	sceneShapes.push_back(new Triangle(aLow, bLow, fLow, MIRROR));
+	sceneShapes.push_back(new Triangle(bLow, cLow, fLow, MIRROR));
+	sceneShapes.push_back(new Triangle(fLow, cLow, eLow, MIRROR));
+	sceneShapes.push_back(new Triangle(cLow, dLow, eLow, MIRROR));
+
+	//Ceiling
+	sceneShapes.push_back(new Triangle(bHigh, aHigh, fHigh, magenta));
+	sceneShapes.push_back(new Triangle(cHigh, bHigh, fHigh, magenta));
+	sceneShapes.push_back(new Triangle(cHigh, fHigh, eHigh, magenta));
+	sceneShapes.push_back(new Triangle(dHigh, cHigh, eHigh, magenta));
+
+
+
+	//ALWAYS PUSH ITEMS INSIDE THE ROOM LAST
 }														

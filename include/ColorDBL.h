@@ -7,14 +7,8 @@ class ColorDBL {
 public:
     
     ColorDBL()  {
-        
-        
-        double colors[3] = {0.0, 0.0, 0.0};
-        srand(std::time(nullptr));
-        
-        colors[rand() % 3] = 1.0;
-      
-        color = dvec3(colors[0],colors[1], colors[2]);//dvec3(randomDouble(), randomDouble(), randomDouble());
+        //color = dvec3(colors[0],colors[1], colors[2]);//dvec3(randomDouble(), randomDouble(), randomDouble());*/
+        color = dvec3(0.0, 0.1, 0.0);
     }
 
     ColorDBL(double r, double g, double b) {
