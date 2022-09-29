@@ -21,6 +21,8 @@ public:
     
     void rayGun(const Scene &_Scene);
 
+    void shootRay(const Scene& _Scene, Ray &_ray, int index);
+
     //void setColor(ColorDBL _color) { color = color; }
 
 private:

@@ -19,6 +19,15 @@
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Ray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Camera.h">
@@ -42,13 +51,19 @@
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Ray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Surface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Triangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Sphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Shape.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

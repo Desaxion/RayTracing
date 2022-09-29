@@ -1,4 +1,7 @@
 ﻿cl : command line warning D9002: ignoring unknown option '-std=c++17'
+  Camera.cpp
+E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Pixel.h(13,24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Camera.cpp(84,8): warning C4101: 'intersectionPoint': unreferenced local variable
   Scene.cpp
-E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\ColorDBL.h(13,24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
   RayTracing.vcxproj -> E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\bin\Debug\RayTracing.exe
