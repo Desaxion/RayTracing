@@ -104,10 +104,16 @@ void Scene::buildScene() {
 	sceneSpheres.push_back(Sphere(dvec4(3.0, 0.0, 0.0, 1.0), 1.0, cyan));
     
 	*/
-	sceneShapes.push_back(new Sphere(dvec4(3.0, 0.0, 0.0, 1.0), 1.0, cyan));
-
+    
+    //Creating a mirror
+    //vec4 mLLow(0, 6.0, -5, 1.0), mLHigh(13.0, 6.0, 0.0, 1.0);
+    //vec4 mRLow(0, -6.0, -5, 1.0), mRHigh(13.0, -6.0, 0.0, 1.0);
+    
+    //Pushing shapes
+    sceneShapes.push_back(new Sphere(dvec4(5.0, 0.0, -2.0, 1.0), 2.0, MIRROR));
+    
 	sceneShapes.push_back(new Triangle(aLow, aHigh, bLow, red));
-	sceneShapes.push_back(new Triangle(bLow, aHigh, bHigh, red));
+	sceneShapes.push_back(new Triangle(bLow, aHigh, bHigh,red));
 
 	//Wall between b and c
 	sceneShapes.push_back(new Triangle(bLow, bHigh, cLow, green));
@@ -131,10 +137,10 @@ void Scene::buildScene() {
 
 
 	//Floor
-	sceneShapes.push_back(new Triangle(aLow, bLow, fLow, MIRROR));
-	sceneShapes.push_back(new Triangle(bLow, cLow, fLow, MIRROR));
-	sceneShapes.push_back(new Triangle(fLow, cLow, eLow, MIRROR));
-	sceneShapes.push_back(new Triangle(cLow, dLow, eLow, MIRROR));
+	sceneShapes.push_back(new Triangle(aLow, bLow, fLow, yellow));
+	sceneShapes.push_back(new Triangle(bLow, cLow, fLow, yellow));
+	sceneShapes.push_back(new Triangle(fLow, cLow, eLow, yellow));
+	sceneShapes.push_back(new Triangle(cLow, dLow, eLow, yellow));
 
 	//Ceiling
 	sceneShapes.push_back(new Triangle(bHigh, aHigh, fHigh, magenta));
@@ -142,7 +148,7 @@ void Scene::buildScene() {
 	sceneShapes.push_back(new Triangle(cHigh, fHigh, eHigh, magenta));
 	sceneShapes.push_back(new Triangle(dHigh, cHigh, eHigh, magenta));
 
+    //sceneShapes.push_back(new Triangle(mLLow, mRLow, mRHigh,  MIRROR));
+   // sceneShapes.push_back(new Triangle(mRHigh, mLHigh, mLLow, MIRROR));
 
-
-	//ALWAYS PUSH ITEMS INSIDE THE ROOM LAST
-}														
+}

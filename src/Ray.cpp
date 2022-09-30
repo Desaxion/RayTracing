@@ -1,4 +1,18 @@
+#include "Def.h"
 #include "Ray.h"
+
+void Ray::bounce(dvec3 _normal, dvec4 _position) {
+    
+    //Reflect our ray
+    dvec3 newDirection(glm::reflect(direction, _normal));
+
+    //Then create a new ray that is reflected
+    Ray* newRay = new Ray(_position,newDirection);
+    
+    //Append the reflected ray to this ray
+    next = newRay;
+    newRay->prev = this;
+}
 
 /*
 Ray* Ray::bounce(Shape* _shape) {

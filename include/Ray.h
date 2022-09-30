@@ -8,10 +8,18 @@ public:
 	Ray() = default;
 
     ~Ray() {
-       /* Ray* temp = nullptr;
-        while (this->next) {
-            
-        }*/
+        /*Ray* temp = this;
+        while (temp->next != nullptr) {
+            //Iterate to the end of the ray list
+            temp = temp->next;
+        }
+        //Now we are at the end of the list, start deleting shit and move backwards
+        while(temp->prev) {
+            temp = temp->prev;
+            delete temp->next;
+        }
+        delete temp;*/
+        
     }
 
     Ray(dvec4 _start, dvec3 _direction) {
@@ -19,6 +27,7 @@ public:
         start = _start;
         normDirection = glm::normalize(_direction);
         direction = _direction;
+        end = dvec4(_start.x + direction.x, _start.y+direction.y,_start.z+direction.z,1.0);
     }
 
     Ray(dvec4 _start, dvec4 _end) {
@@ -44,10 +53,14 @@ public:
     
     dvec3 getNormDirection() const { return glm::normalize(dvec3(start.x,start.y,start.z) - dvec3(end.x,end.y,end.z)); }
 
-    void setNext(Ray *_ray) { next = _ray; }
+    void setNext(Ray* _ray) { next = _ray; }
     void setPrev(Ray* _ray) { prev = _ray; }
     
-    //Ray* bounce(Shape* _shape);
+    Ray getNext() const {return *this->next;}
+    Ray getPrev() const {return *this->prev;}
+    
+    
+    void bounce(dvec3 _normal, dvec4 _position);
 
 private:
 
@@ -55,8 +68,8 @@ private:
 	//Surface* surface;
 
 	// Pointers to the previous and next ray
-	Ray* next;
-	Ray* prev;
+	Ray* next = nullptr;
+	Ray* prev = nullptr;
 
     
     
