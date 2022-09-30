@@ -15,7 +15,7 @@ Triangle::Triangle(dvec4 _v0, dvec4 _v1, dvec4 _v2, const Surface& _surface) {
 }
 
 //Function to intersect the triangle
-bool Triangle::intersection(Ray _ray, dvec4& intersectionPoint) {
+bool Triangle::intersection(const Ray &_ray, dvec4& intersectionPoint) {
 	
 	//Create vec3:s of all the incoming data
 	/*dvec3 T = dvec3(_ray.getStart().x, _ray.getStart().y, _ray.getStart().z) - dvec3(vertices[0].x, vertices[0].y, vertices[0].z);
@@ -56,7 +56,7 @@ bool Triangle::intersection(Ray _ray, dvec4& intersectionPoint) {
     dvec3 s = _ray.getVec3Start() - dvec3(vertices[0].x, vertices[0].y, vertices[0].z);
     double u = f * glm::dot(s,h);
     
-    if(u < 0.0 || u > 1.0){ return false; }
+   // if(u < 0.0 || u > 1.0){ return false; }
     
     dvec3 q = glm::cross(s, E1);
     
@@ -77,5 +77,9 @@ bool Triangle::intersection(Ray _ray, dvec4& intersectionPoint) {
 }
 
 dvec3 Triangle::getNormDirection() {
+    return glm::normalize(normal);
+}
+
+dvec3 Triangle::getNormDirection(dvec4 _inArg) {
     return glm::normalize(normal);
 }
