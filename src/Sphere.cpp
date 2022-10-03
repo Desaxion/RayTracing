@@ -35,12 +35,13 @@ bool Sphere::intersection(const Ray &_ray, dvec4& intersectionPoint) {
     }
         dvec3 tempVec3 = rayBegin + theDistance*_ray.getNormDirection();
         
-        intersectionPoint = dvec4(tempVec3.x,tempVec3.y,tempVec3.z,1.0);
-        
+		intersectionPoint = dvec4(normal.x + tempVec3.x, tempVec3.y, tempVec3.z, 1.0);
         
 	dvec4 tempNormal = intersectionPoint - midpoint;
 
 	normal = glm::normalize(dvec3(tempNormal.x, tempNormal.y, tempNormal.z));
+
+	intersectionPoint = dvec4(0.001 * normal.x + intersectionPoint.x, 0.001 * normal.y + intersectionPoint.y, 0.001 * normal.z + intersectionPoint.z, 1.0);
        // intersectionPoint = dvec4(intersectionPoint.x + normal.x*0.1,intersectionPoint.y + normal.y*0.1,intersectionPoint.z + normal.z*0.1,1.0);
 	return true;
 	}
@@ -54,5 +55,5 @@ dvec3 Sphere::getNormDirection() {
 }
 
 dvec3 Sphere::getNormDirection(dvec4 _pointOnSphere){
-    return glm::normalize(dvec3(_pointOnSphere.x-midpoint.x,_pointOnSphere.y-midpoint.y,_pointOnSphere.z-midpoint.z));
+    return glm::normalize(dvec3(_pointOnSphere.x-midpoint.x, _pointOnSphere.y-midpoint.y, _pointOnSphere.z-midpoint.z));
 }

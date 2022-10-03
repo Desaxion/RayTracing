@@ -17,7 +17,15 @@ void Camera::captureImage(const Scene& _Scene) {
 	rayGun(_Scene);
 	//Render(theScene);
 
+
+
+
 	for (int y = 0; y < width * height; ++y) {
+		//if (y == 320387 || y == 320388 || y == 320389) {
+		//	pixels[y].setColor(ColorDBL(1.0, 1.0, 1.0));
+		//}
+
+
 		img << pixels[y] << std::endl;
 	}
     img.close();
@@ -42,6 +50,7 @@ void Camera::rayGun(const Scene& _Scene) {
 			dvec4 endPoint = dvec4(5 * pixelPoint.x, 5 * pixelPoint.y, 5 * pixelPoint.z, 1.0);
 			Ray* theRay =  new Ray(eye, pixelPoint);
 			//This function will be called recursively for each ray that bounces.
+		
 			shootRay(_Scene, *theRay, pixelIndex);
 			pixelIndex++;
             
@@ -127,7 +136,6 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index) {
 					//bounce the ray on the surface
 					//Ray newRay = _Scene.sceneShapes[n]->bounce(_ray,newIntersectionPoint);
 					//Shoot the reflected ray
-                    
                     
                     _ray.bounce(_Scene.sceneShapes[n]->getNormDirection(newIntersectionPoint),newIntersectionPoint);
 					
