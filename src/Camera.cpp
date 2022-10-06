@@ -110,7 +110,7 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int
             
             dvec3 intersectionVector = dvec3(_ray.getStart().x-intersectionPoint.x,_ray.getStart().y-intersectionPoint.y,_ray.getStart().z-intersectionPoint.z);
             
-            
+            //test
            
 			//Set this pixels color to the shapes color'
 			// 
