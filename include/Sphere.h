@@ -18,6 +18,10 @@ public:
 	
     dvec3 getNormDirection(dvec4 _pointOnSphere) override;
     
+    dvec4 getRandomPoint() override;
+    
+    double getArea() override;
+    
 private:
 	dvec4 midpoint;
 	double radius;

@@ -50,8 +50,8 @@ void Camera::rayGun(const Scene& _Scene) {
 			dvec4 endPoint = dvec4(5 * pixelPoint.x, 5 * pixelPoint.y, 5 * pixelPoint.z, 1.0);
 			Ray* theRay =  new Ray(eye, pixelPoint);
 			//This function will be called recursively for each ray that bounces.
-		
-			shootRay(_Scene, *theRay, pixelIndex);
+            int intersectedSurface = -1;
+			shootRay(_Scene, *theRay, pixelIndex, intersectedSurface);
 			pixelIndex++;
             
             
@@ -91,7 +91,7 @@ void Camera::rayGun(const Scene& _Scene) {
 	}
 }
 
-void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index) {
+void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int intersectedSurface) {
 	//Put the first intersectionpoint far away so that it is possible to find which intersectionpoint which is closer to camera.
     dvec4 intersectionPoint = dvec4(50.0,50.0,50.0,1.0);
     dvec4 newIntersectionPoint  = dvec4(50.0,50.0,50.0,1.0);
@@ -100,7 +100,11 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index) {
 	for (int n = 0; n < _Scene.sceneShapes.size(); n++) {
 		//If the ray intersects one of these shapes, and the shape is closer than previous intersectionpoint
 		if (_Scene.sceneShapes[n]->intersection(_ray, newIntersectionPoint)) {
-            
+            if(intersectedSurface == n){
+                continue;
+            }   else{
+                intersectedSurface = n;
+            }
             //Calculate vectors that go from the beginning of the ray and the other intersection point (for this pixel) to make sure that the thing that the ray intersected first is the one to be chosen.
             dvec3 newIntersectionVector = dvec3(_ray.getStart().x-newIntersectionPoint.x,_ray.getStart().y-newIntersectionPoint.y,_ray.getStart().z-newIntersectionPoint.z);
             
@@ -130,6 +134,7 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index) {
 				if (_Scene.sceneShapes[n]->getReflModel() == DIFFUSE) {
 					pixels[index].setColor(_Scene.sceneShapes[n]->getColor());
 					//return _Scene.sceneShapes[n]->getColor();
+                    //We could change the color of the ray instead of the pixel, we should change it to that later on
 				}
 				else if (_Scene.sceneShapes[n]->getReflModel() == MIRROR) {
                    // _Scene.sceneShapes[n]->intersection(_ray, newIntersectionPoint);
@@ -139,10 +144,27 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index) {
                     
                     _ray.bounce(_Scene.sceneShapes[n]->getNormDirection(newIntersectionPoint),newIntersectionPoint);
 					
-                    shootRay(_Scene, _ray.getNext(),index);
+                    shootRay(_Scene, _ray.getNext(),index, intersectedSurface);
 				}
 			}
 		}
 	}
 
+}
+
+ColorDBL Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene){
+    //Sample random points on the lightsource
+    const double L_e = 3200.0; //W/m2
+    //Go over all lightsources
+    for(int n = 0; n < _Scene.lightSources.size();n++){
+        for(int i = 0; i < NUMBER_OF_LIGHTSAMPLES; i++){
+        //calculate light, add in shade or not and so on
+        //Inshade?
+        
+        
+        }
+    }
+    
+    ColorDBL temp(dvec3(1.0));
+    return temp;
 }

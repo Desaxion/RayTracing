@@ -30,9 +30,9 @@ public:
 
     //Must use pointers since abstract classes cant be instantiated
     std::vector<Shape*> sceneShapes;
+    std::vector<Shape*> lightSources;
 
 private:
-
      
     
 };

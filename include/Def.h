@@ -29,5 +29,11 @@ const int TRANSPARENT = 3;
 const double EPSILON = 0.00001;
 const double PI = 3.14159265359;
 
+double euclideanDistance(dvec4 _p1, dvec4 _p2){
+    double x = _p1.x - _p2.x;
+    double y = _p1.y - _p2.y;
+    double z = _p1.z - _p2.z;
+    return sqrt(x*x + y*y + z*z);
+}
 
 #endif

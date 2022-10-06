@@ -1,5 +1,6 @@
 #pragma once
 #include "Def.h"
+#include "ColorDBL.h"
 //#include "Shape.h"
 
 class Ray {
@@ -59,6 +60,8 @@ public:
     Ray getNext() const {return *this->next;}
     Ray getPrev() const {return *this->prev;}
     
+    void setColor(ColorDBL _color) {color = _color;}
+    ColorDBL getGolor(){return color;}
     
     void bounce(dvec3 _normal, dvec4 _position);
 
@@ -81,7 +84,8 @@ private:
 	dvec4 end;
     dvec3 normDirection;
     dvec3 direction;
-
+    ColorDBL color = ColorDBL(dvec3(1.0));
+    
 	// direction från direction-klass?
 
 };

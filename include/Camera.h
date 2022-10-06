@@ -21,8 +21,10 @@ public:
     
     void rayGun(const Scene &_Scene);
 
-    void shootRay(const Scene& _Scene, Ray _ray,unsigned long int index);
+    void shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int intersectedSurface);
 
+    ColorDBL calculateLight(dvec4 intersectionPoint, const Scene& _Scene);
+    
     //void setColor(ColorDBL _color) { color = color; }
 
 private:
@@ -38,6 +40,8 @@ private:
     
     Pixel* pixels = new Pixel[width*height];
    
+    int NUMBER_OF_LIGHTSAMPLES = 10;
+    
 };
 
 //The camera plane should be as follows:

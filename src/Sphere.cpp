@@ -1,4 +1,6 @@
 #include "Sphere.h"
+#include <stdlib.h>     /* srand, rand */
+#include <ctime>
 
 bool Sphere::intersection(const Ray &_ray, dvec4& intersectionPoint) {
 
@@ -41,7 +43,7 @@ bool Sphere::intersection(const Ray &_ray, dvec4& intersectionPoint) {
 
 	normal = glm::normalize(dvec3(tempNormal.x, tempNormal.y, tempNormal.z));
 
-	intersectionPoint = dvec4(0.001 * normal.x + intersectionPoint.x, 0.001 * normal.y + intersectionPoint.y, 0.001 * normal.z + intersectionPoint.z, 1.0);
+	//intersectionPoint = dvec4(0.001 * normal.x + intersectionPoint.x, 0.001 * normal.y + intersectionPoint.y, 0.001 * normal.z + intersectionPoint.z, 1.0);
        // intersectionPoint = dvec4(intersectionPoint.x + normal.x*0.1,intersectionPoint.y + normal.y*0.1,intersectionPoint.z + normal.z*0.1,1.0);
 	return true;
 	}
@@ -56,4 +58,37 @@ dvec3 Sphere::getNormDirection() {
 
 dvec3 Sphere::getNormDirection(dvec4 _pointOnSphere){
     return glm::normalize(dvec3(_pointOnSphere.x-midpoint.x, _pointOnSphere.y-midpoint.y, _pointOnSphere.z-midpoint.z));
+}
+
+dvec4 Sphere::getRandomPoint(){
+    dvec4 randomPointOnSphere;
+    
+    //generate two random angles that define the coordinates
+    srand(std::time(NULL));
+    double u = (double)rand() / RAND_MAX * 2.0 * PI;
+    double v = (double)rand() / RAND_MAX * 2.0 * PI;
+    
+    /*
+     The coordinates are then given by:
+     
+     x = r*sin(v)*cos(u);
+     y = r*sin(v)*sin(u);
+     z = r*cos(v);
+     
+     And are given in the local coordinate system of the sphere, translate the point to world system
+     
+     */
+    double x = radius*sin(v)*cos(u);
+    double y = radius*sin(v)*sin(u);
+    double z = radius*cos(v);
+    
+    randomPointOnSphere = dvec4(midpoint.x + x, midpoint.y + y, midpoint.z + z, 1.0);
+    
+    return randomPointOnSphere;
+}
+
+double Sphere::getArea() {
+    
+    return radius*radius*4.0*PI;
+    
 }

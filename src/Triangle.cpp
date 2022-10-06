@@ -1,4 +1,9 @@
 #include "Triangle.h"
+#include <stdlib.h>     /* srand, rand */
+#include <ctime>
+#include <algorithm>
+#include <numeric>
+#include <vector>
 
 Triangle::Triangle(dvec4 _v0, dvec4 _v1, dvec4 _v2, const Surface& _surface) {
 
@@ -82,4 +87,46 @@ dvec3 Triangle::getNormDirection() {
 
 dvec3 Triangle::getNormDirection(dvec4 _inArg) {
     return glm::normalize(normal);
+}
+//Returns a random point on the triangle
+dvec4 Triangle::getRandomPoint() {
+    
+    dvec4 randomPointOnTriangle;
+    
+    //The following code generate 3 random numbers that together add up to 1, aka the barycentric coordinates.
+    srand(std::time(NULL));
+    std::vector<double> v(3);
+    std::generate(v.begin(), v.end(), rand);
+    const double total = std::accumulate(v.begin(), v.end(), 0.0);
+    for (double& value: v) value /= total;
+
+    //Translate barycentric coordinates to cartesian coordinates using following formula:
+    /*
+     
+     X = (u * p0.x + v * p1.x + w * p2.x)
+     Y = (u * p0.y + v * p1.y + w * p2.y)
+     Z = (u * p0.z + v * p1.z + w * p2.z)
+     
+     where u, v and w are the barycentric coordinates, and p0, p1 and p2 are the vertices of the triangle
+     
+     */
+    randomPointOnTriangle.x = vertices[0].x*v[0] + vertices[1].x*v[1] + vertices[2].x*v[2];
+    randomPointOnTriangle.y = vertices[0].y*v[0] + vertices[1].y*v[1] + vertices[2].y*v[2];
+    randomPointOnTriangle.z = vertices[0].z*v[0] + vertices[1].z*v[1] + vertices[2].z*v[2];
+    randomPointOnTriangle.w = 1.0;
+    
+    return randomPointOnTriangle;
+}
+
+
+double Triangle::getArea() {
+//Calculating area using Herons Formula:
+    double area;
+    double lE1, lE2, lE3;
+    lE1 = euclideanDistance(vertices[0],vertices[1]);
+    lE2 = euclideanDistance(vertices[1],vertices[2]);
+    lE3 = euclideanDistance(vertices[2],vertices[0]);
+    double s = (lE1 + lE2 + lE3)/2.0;
+    area = sqrt(s*((s-lE1)*(s-lE2)*(s-lE3)));
+    return area;
 }

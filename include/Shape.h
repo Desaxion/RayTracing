@@ -16,6 +16,10 @@ public:
     
     virtual dvec3 getNormDirection(dvec4 _intersectionPoint) = 0;
 
+    virtual dvec4 getRandomPoint() = 0;
+    
+    virtual double getArea() = 0;
+    
 	Ray bounce(const Ray& _ray, dvec4 position);
 	
 
