@@ -152,7 +152,7 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int
 
 }
 
-ColorDBL Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene){
+ColorDBL Camera::calculateLight(dvec4 _intersectionPoint, const Scene& _Scene, dvec3 _normal){
     //Sample random points on the lightsource
     const double L_e = 3200.0; //W/m2
     //Go over all lightsources
@@ -160,7 +160,7 @@ ColorDBL Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene){
         for(int i = 0; i < NUMBER_OF_LIGHTSAMPLES; i++){
         //calculate light, add in shade or not and so on
         //Inshade?
-        
+        double CosineOmegaX = glm::dot(normal,)
         
         }
     }

@@ -13,6 +13,9 @@
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Ray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Rectangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -49,6 +52,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Ray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Rectangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Scene.h">

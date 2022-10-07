@@ -370,6 +370,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\ColorDBL.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Pixel.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Ray.cpp" />
+    <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Rectangle.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Scene.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Shape.cpp" />
     <ClCompile Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\src\Sphere.cpp" />
@@ -382,6 +383,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Pixel.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Polygon.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Ray.h" />
+    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Rectangle.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Scene.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Shape.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Sphere.h" />
