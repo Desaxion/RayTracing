@@ -3,6 +3,10 @@
 #include <iostream>
 #include <fstream>
 #include "Scene.h"
+//#include "Functions.h"
+
+
+
 
 void Camera::captureImage(const Scene& _Scene) {
 	std::cout << "Capturing image... " << std::endl;
@@ -99,7 +103,13 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int
 
 	for (int n = 0; n < _Scene.sceneShapes.size(); n++) {
 		//If the ray intersects one of these shapes, and the shape is closer than previous intersectionpoint
+        dvec4 temp = dvec4(50.0,50.0,50.0,1.0);
+        if(n == 13 && _Scene.sceneShapes[n]->intersection(_ray, temp)) {
+            std::cout <<"";
+        }
+        
 		if (_Scene.sceneShapes[n]->intersection(_ray, newIntersectionPoint)) {
+           
             if(intersectedSurface == n){
                 continue;
             }   else{
@@ -132,7 +142,15 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int
 				intersectionPoint = newIntersectionPoint;
                 
 				if (_Scene.sceneShapes[n]->getReflModel() == DIFFUSE) {
-					pixels[index].setColor(_Scene.sceneShapes[n]->getColor());
+                    //Calculating the color
+                    ColorDBL theColor(_Scene.sceneShapes[n]->getColor());
+                    double radiance = calculateLight(intersectionPoint,_Scene,_Scene.sceneShapes[n]->getNormDirection(intersectionPoint))/1000.0;
+                    theColor = theColor.getColor()*radiance;
+                    
+                    pixels[index].setColor(theColor);
+                    
+                    
+                    
 					//return _Scene.sceneShapes[n]->getColor();
                     //We could change the color of the ray instead of the pixel, we should change it to that later on
 				}
@@ -146,25 +164,46 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int
 					
                     shootRay(_Scene, _ray.getNext(),index, intersectedSurface);
 				}
+                else if(_Scene.sceneShapes[n]->getReflModel() == LIGHTSOURCE){
+                    pixels[index].setColor(dvec3(1.0));
+                }
 			}
 		}
 	}
 
 }
 
-ColorDBL Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene){
+double euclideanDistance(dvec4 _p1, dvec4 _p2){
+    double x = _p1.x - _p2.x;
+    double y = _p1.y - _p2.y;
+    double z = _p1.z - _p2.z;
+    return sqrt(x*x + y*y + z*z);
+}
+
+double Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec3 _normal){
     //Sample random points on the lightsource
     const double L_e = 3200.0; //W/m2
     //Go over all lightsources
+    double irradiance = 0.0;
+    double estimation = 0.0;
     for(int n = 0; n < _Scene.lightSources.size();n++){
         for(int i = 0; i < NUMBER_OF_LIGHTSAMPLES; i++){
         //calculate light, add in shade or not and so on
-        //Inshade?
-        
-        
+        // if !inShade :
+            dvec4 pointOnLightsource = _Scene.lightSources[n]->getRandomPoint();
+            dvec3 di(intersectionPoint.x - pointOnLightsource.x,intersectionPoint.y - pointOnLightsource.y,intersectionPoint.z - pointOnLightsource.z);
+            
+            double diLength = euclideanDistance(intersectionPoint, pointOnLightsource);
+            
+            double cosineOmegaX = (glm::dot(_normal,di))/diLength;
+            double cosineOmegaY = (glm::dot(-_Scene.lightSources[n]->getNormDirection(intersectionPoint),di))/diLength;
+
+            irradiance += (cosineOmegaX*cosineOmegaY)/(diLength*diLength);
         }
+        estimation += ((_Scene.lightSources[n]->getArea()*L_e)/NUMBER_OF_LIGHTSAMPLES)*irradiance;
     }
     
-    ColorDBL temp(dvec3(1.0));
-    return temp;
+    return estimation;
 }
+
+

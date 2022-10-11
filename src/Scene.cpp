@@ -110,10 +110,10 @@ void Scene::buildScene() {
     //vec4 mRLow(0, -6.0, -5, 1.0), mRHigh(13.0, -6.0, 0.0, 1.0);
     
     //Pushing shapes
-    sceneShapes.push_back(new Sphere(dvec4(4.0, -1.0, 0.0, 1.0), 1.5, MIRROR));
+    //sceneShapes.push_back(new Sphere(dvec4(4.0, -1.0, 0.0, 1.0), 1.5, LIGHTSOURCE));
     
-    sceneShapes.push_back(new Triangle(aLow, aHigh, bLow, MIRROR));
-	sceneShapes.push_back(new Triangle(bLow, aHigh, bHigh,MIRROR));
+    sceneShapes.push_back(new Triangle(aLow, aHigh, bLow, red));
+	sceneShapes.push_back(new Triangle(bLow, aHigh, bHigh,red));
 
 	//Wall between b and c
 	sceneShapes.push_back(new Triangle(bLow, bHigh, cLow, green));
@@ -148,8 +148,25 @@ void Scene::buildScene() {
 	sceneShapes.push_back(new Triangle(cHigh, fHigh, eHigh, magenta));
 	sceneShapes.push_back(new Triangle(dHigh, cHigh, eHigh, magenta));
 
-    //sceneShapes.push_back(new Triangle(mLLow, mRLow, mRHigh,  MIRROR));
-   // sceneShapes.push_back(new Triangle(mRHigh, mLHigh, mLLow, MIRROR));
+    //Creating the lightsource
+    vec4 L1Low(10.0, 2.0, 4.8, 1.0), L1High(4.0, 2.0, 4.8, 1.0);
+    vec4 L2Low(10.0, -2.0, 4.8, 1.0), L2High(4.0, -2.0, 4.8, 1.0);
+    /*
+     Normal is supposed to point inwards, this is placed in the cieling
+    L1High o------------------o L2High
+          |                 /|
+          |                / |
+          |              /   |
+          |            /     |
+          |        /         |
+          |    /             |
+    L1Low  o------------------o L2Low
+*/
+    
+    
+    
+    sceneShapes.push_back(new Triangle(L1Low, L2High, L1High,  LIGHTSOURCE));
+    sceneShapes.push_back(new Triangle(L2High, L1Low, L2Low, LIGHTSOURCE));
     
     //Creating a new vector with just the lightsources, so that the information can be kept
     for(Shape* i : sceneShapes){

@@ -4,6 +4,7 @@
 #include "Surface.h"
 #include <array>
 #include "Ray.h"
+//#include "Functions.h"
 
 class Triangle : public Shape {
 public:

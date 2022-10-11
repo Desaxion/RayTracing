@@ -5,6 +5,9 @@
 #include <numeric>
 #include <vector>
 
+
+
+
 Triangle::Triangle(dvec4 _v0, dvec4 _v1, dvec4 _v2, const Surface& _surface) {
 
 	vertices = { _v0, _v1, _v2 };
@@ -61,7 +64,7 @@ bool Triangle::intersection(const Ray &_ray, dvec4& intersectionPoint) {
     dvec3 s = _ray.getVec3Start() - dvec3(vertices[0].x, vertices[0].y, vertices[0].z);
     double u = f * glm::dot(s,h);
     
-   // if(u < 0.0 || u > 1.0){ return false; }
+    if(u < 0.0 || u > 1.0){ return false; }
     
     dvec3 q = glm::cross(s, E1);
     
@@ -118,15 +121,24 @@ dvec4 Triangle::getRandomPoint() {
     return randomPointOnTriangle;
 }
 
+//BETTER WAYS TO DO THIS BUT SOMEHOW ILLEGAL
+double distance(dvec4 _p1, dvec4 _p2){
+    double x = _p1.x - _p2.x;
+    double y = _p1.y - _p2.y;
+    double z = _p1.z - _p2.z;
+    return sqrt(x*x + y*y + z*z);
+}
 
 double Triangle::getArea() {
 //Calculating area using Herons Formula:
     double area;
     double lE1, lE2, lE3;
-    lE1 = euclideanDistance(vertices[0],vertices[1]);
-    lE2 = euclideanDistance(vertices[1],vertices[2]);
-    lE3 = euclideanDistance(vertices[2],vertices[0]);
+    lE1 = distance(vertices[0],vertices[1]);
+    lE2 = distance(vertices[1],vertices[2]);
+    lE3 = distance(vertices[2],vertices[0]);
     double s = (lE1 + lE2 + lE3)/2.0;
     area = sqrt(s*((s-lE1)*(s-lE2)*(s-lE3)));
     return area;
 }
+
+
