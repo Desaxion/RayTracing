@@ -23,7 +23,7 @@ public:
 
     void shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int intersectedSurface);
 
-    ColorDBL Camera::calculateLight(dvec4 _intersectionPoint, const Scene& _Scene, dvec3 _normal);
+    double calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec3 _normal);
     
     //void setColor(ColorDBL _color) { color = color; }
 

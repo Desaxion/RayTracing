@@ -20,6 +20,8 @@ public:
     dvec3 getColor() const { return color; };
     void setColor(const dvec3& inColor) {color = inColor;};
 
+   // ColorDBL operator*(ColorDBL _in);
+   // ColorDBL operator*(double _in);
 
 private:
     double randomDouble();

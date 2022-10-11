@@ -7,153 +7,18 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DDF223D3-F2C6-4F44-8420-9337C83C2630"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Ray.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "7"
-            endingLineNumber = "7"
-            landmarkName = "Ray::bounce(_normal, _position)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "21EAF261-6B31-4A36-AC7D-2882246889EC"
+            uuid = "560FE4A1-8FEE-4B5B-93EC-5EA168BAE8CD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Camera.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-<<<<<<< Updated upstream
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "Camera::shootRay(_Scene, _ray, index)"
-            landmarkType = "7">
-=======
-            startingLineNumber = "128"
-            endingLineNumber = "128">
->>>>>>> Stashed changes
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "226BAAE9-C053-4303-8F37-B595139214ED"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Ray.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "Ray::bounce(_normal, _position)"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "Camera::shootRay(_Scene, _ray, index, intersectedSurface)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F3ADB09F-2481-47EA-99E7-822A9D4345D2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Camera.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-<<<<<<< Updated upstream
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "Camera::shootRay(_Scene, _ray, index)"
-            landmarkType = "7">
-=======
-            startingLineNumber = "96"
-            endingLineNumber = "96">
->>>>>>> Stashed changes
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "96715842-3D8B-4730-AEFF-FADC76AE48E9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Camera.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-<<<<<<< Updated upstream
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "Camera::shootRay(_Scene, _ray, index)"
-            landmarkType = "7">
-=======
-            startingLineNumber = "121"
-            endingLineNumber = "121">
->>>>>>> Stashed changes
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CEE6382A-3DB9-4263-9BB3-A6F3CB970AA5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Camera.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-<<<<<<< Updated upstream
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "Camera::shootRay(_Scene, _ray, index)"
-            landmarkType = "7">
-=======
-            startingLineNumber = "129"
-            endingLineNumber = "129">
->>>>>>> Stashed changes
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F5F84EB4-433D-4201-92FD-564019807FAF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Sphere.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "Sphere::intersection(_ray, intersectionPoint)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-<<<<<<< Updated upstream
-=======
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0C384F9F-BE8F-43ED-9F2A-54102EAA2B8D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Camera.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "Camera::rayGun(_Scene)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
->>>>>>> Stashed changes
    </Breakpoints>
 </Bucket>
