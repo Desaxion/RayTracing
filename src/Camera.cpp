@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include "Scene.h"
+#include <stdlib.h>     /* srand, rand */
+#include <ctime>
 //#include "Functions.h"
 
 
@@ -17,10 +19,16 @@ void Camera::captureImage(const Scene& _Scene) {
 	img << "P3" << std::endl;
 	img << width << " " << height << std::endl;
 	img << "255" << std::endl;
-
+	russianRoulette();
+		russianRoulette();
+		russianRoulette();
+		russianRoulette();
+		russianRoulette();
+		russianRoulette();
+		russianRoulette();
+	
 	rayGun(_Scene);
 	//Render(theScene);
-
 
 
 
@@ -39,11 +47,16 @@ void Camera::captureImage(const Scene& _Scene) {
 }
 //Pew pew
 void Camera::rayGun(const Scene& _Scene) {
+
+	const int RAYS_PER_PIXEL = 1;
+
 	//Shoot rays through all of the pixels (At this moment stopping in the pixels)
 	//iterate through each pixel, assign a color.
 	unsigned long int pixelIndex = 0;
 	for (int row = 0; row < height; row++) {
 		for (int column = 0; column < width; column++) {
+			ColorDBL theColor(dvec3(0.0));
+			ColorDBL tempColor;
 			double pixelHeight = 2.0 / height;
 			double pixelLength = 2.0 / width;
 			//std::cout << "Working... (" << i*100.0 / width * height << "% done) " << std::endl;
@@ -55,7 +68,18 @@ void Camera::rayGun(const Scene& _Scene) {
 			Ray* theRay =  new Ray(eye, pixelPoint);
 			//This function will be called recursively for each ray that bounces.
             int intersectedSurface = -1;
-			shootRay(_Scene, *theRay, pixelIndex, intersectedSurface);
+
+			if (pixelIndex == 638888) { //DEBUG
+				std::cout << "";
+			}
+
+			//for (int k = 0; k < RAYS_PER_PIXEL; k++) {
+				tempColor = shootRay(_Scene, *theRay, intersectedSurface);
+				//theColor += tempColor;
+				theColor = ColorDBL((theColor.getColor().r + tempColor.getColor().r)/RAYS_PER_PIXEL, (theColor.getColor().g + tempColor.getColor().g) / RAYS_PER_PIXEL, (theColor.getColor().b + tempColor.getColor().b) / RAYS_PER_PIXEL);
+			//}
+
+			pixels[pixelIndex].setColor(theColor);
 			pixelIndex++;
             
             
@@ -95,21 +119,18 @@ void Camera::rayGun(const Scene& _Scene) {
 	}
 }
 
-void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int intersectedSurface) {
+ColorDBL Camera::shootRay(const Scene& _Scene, Ray _ray, int intersectedSurface) {
 	//Put the first intersectionpoint far away so that it is possible to find which intersectionpoint which is closer to camera.
     dvec4 intersectionPoint = dvec4(50.0,50.0,50.0,1.0);
     dvec4 newIntersectionPoint  = dvec4(50.0,50.0,50.0,1.0);
 
+	ColorDBL result = ColorDBL(dvec3(0.0));
 
 	for (int n = 0; n < _Scene.sceneShapes.size(); n++) {
-		//If the ray intersects one of these shapes, and the shape is closer than previous intersectionpoint
-        dvec4 temp = dvec4(50.0,50.0,50.0,1.0);
-        if(n == 13 && _Scene.sceneShapes[n]->intersection(_ray, temp)) {
-            std::cout <<"";
-        }
-        
+		//If the ray intersects one of these shapes, and the shape is closer than previous intersectionpoint        
 		if (_Scene.sceneShapes[n]->intersection(_ray, newIntersectionPoint)) {
            
+			
             if(intersectedSurface == n){
                 continue;
             }   else{
@@ -142,17 +163,31 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int
 				intersectionPoint = newIntersectionPoint;
                 
 				if (_Scene.sceneShapes[n]->getReflModel() == DIFFUSE) {
-                    //Calculating the color
-                    ColorDBL theColor(_Scene.sceneShapes[n]->getColor());
-                    double radiance = calculateLight(intersectionPoint,_Scene,_Scene.sceneShapes[n]->getNormDirection(intersectionPoint))/1000.0;
-                    theColor = theColor.getColor()*radiance;
-                    
-                    pixels[index].setColor(theColor);
-                    
-                    
-                    
-					//return _Scene.sceneShapes[n]->getColor();
-                    //We could change the color of the ray instead of the pixel, we should change it to that later on
+					
+					ColorDBL theColor(_Scene.sceneShapes[n]->getColor());
+					double radiance = calculateLight(intersectionPoint, _Scene, _Scene.sceneShapes[n]->getNormDirection(intersectionPoint)); //Make this a vec3 instead, one component for each color
+					double BRDF = 0.001;
+					
+					theColor = theColor.getColor() * radiance * BRDF;
+
+					result = ColorDBL((theColor.getColor().r + result.getColor().r), (theColor.getColor().g + result.getColor().g), (theColor.getColor().b + result.getColor().b));
+
+					
+					if (russianRoulette()) {
+					//splitta rayen och bouncea vidare.
+
+						//Testa bounce med mirror bounce
+						_ray.bounce(_Scene.sceneShapes[n]->getNormDirection(newIntersectionPoint), newIntersectionPoint);
+
+						ColorDBL splittedColor;
+
+						splittedColor = shootRay(_Scene, _ray.getNext(), intersectedSurface);
+
+						ColorDBL((splittedColor.getColor().r + result.getColor().r), (splittedColor.getColor().g + result.getColor().g), (splittedColor.getColor().b + result.getColor().b));
+
+
+					}
+		
 				}
 				else if (_Scene.sceneShapes[n]->getReflModel() == MIRROR) {
                    // _Scene.sceneShapes[n]->intersection(_ray, newIntersectionPoint);
@@ -162,14 +197,15 @@ void Camera::shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int
                     
                     _ray.bounce(_Scene.sceneShapes[n]->getNormDirection(newIntersectionPoint),newIntersectionPoint);
 					
-                    shootRay(_Scene, _ray.getNext(),index, intersectedSurface);
+                    shootRay(_Scene, _ray.getNext(), intersectedSurface);
 				}
                 else if(_Scene.sceneShapes[n]->getReflModel() == LIGHTSOURCE){
-                    pixels[index].setColor(dvec3(1.0));
+                  result = ColorDBL(dvec3(1.0));
                 }
 			}
 		}
 	}
+	return result;
 
 }
 
@@ -184,13 +220,15 @@ double Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec
     //Sample random points on the lightsource
     const double L_e = 3200.0; //W/m2
     //Go over all lightsources
-    double irradiance = 0.0;
+    double numerator = 0.0;
     double estimation = 0.0;
     for(int n = 0; n < _Scene.lightSources.size();n++){
         for(int i = 0; i < NUMBER_OF_LIGHTSAMPLES; i++){
         //calculate light, add in shade or not and so on
         // if !inShade :
+		
             dvec4 pointOnLightsource = _Scene.lightSources[n]->getRandomPoint();
+			if (!inShade(pointOnLightsource, intersectionPoint, _Scene)) {
             dvec3 di(intersectionPoint.x - pointOnLightsource.x,intersectionPoint.y - pointOnLightsource.y,intersectionPoint.z - pointOnLightsource.z);
             
             double diLength = euclideanDistance(intersectionPoint, pointOnLightsource);
@@ -198,12 +236,39 @@ double Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec
             double cosineOmegaX = (glm::dot(_normal,di))/diLength;
             double cosineOmegaY = (glm::dot(-_Scene.lightSources[n]->getNormDirection(intersectionPoint),di))/diLength;
 
-            irradiance += (cosineOmegaX*cosineOmegaY)/(diLength*diLength);
+            numerator += (cosineOmegaX*cosineOmegaY)/(diLength*diLength);
+			}
         }
-        estimation += ((_Scene.lightSources[n]->getArea()*L_e)/NUMBER_OF_LIGHTSAMPLES)*irradiance;
+        estimation += ((_Scene.lightSources[n]->getArea()*L_e)/NUMBER_OF_LIGHTSAMPLES)*numerator;
     }
     
     return estimation;
 }
 
 
+bool Camera::inShade(dvec4 pointOnLightsource, dvec4 pointOnSurface,const Scene& _Scene) {
+	bool res = false;
+	Ray lightRay(pointOnSurface, pointOnLightsource);
+	
+	dvec4 newIntersectionPoint = dvec4(50.0, 50.0, 50.0, 1.0);
+	dvec4 actualIntersection = dvec4(50.0, 50.0, 50.0, 1.0);
+
+
+	for (int n = 0; n < _Scene.sceneShapes.size(); n++) {
+		if (_Scene.sceneShapes[n]->getReflModel() != LIGHTSOURCE && _Scene.sceneShapes[n]->intersection(lightRay, newIntersectionPoint)) {
+			actualIntersection = newIntersectionPoint;
+		}
+	}
+	Ray shadowRay(pointOnSurface, actualIntersection);
+
+	if (shadowRay.getLength() < lightRay.getLength()) {
+		res = true;
+	}
+
+	return res;
+}
+
+bool Camera::russianRoulette() {
+	srand(std::time(NULL));
+	return (rand() % 1000 == 0); //The chance is now 1/6
+}

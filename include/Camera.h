@@ -21,11 +21,15 @@ public:
     
     void rayGun(const Scene &_Scene);
 
-    void shootRay(const Scene& _Scene, Ray _ray,unsigned long int index, int intersectedSurface);
+    ColorDBL Camera::shootRay(const Scene& _Scene, Ray _ray, int intersectedSurface);
 
     double calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec3 _normal);
+
+    bool inShade(dvec4 lightPoint, dvec4 shadowPoint,const Scene& _Scene);
     
     //void setColor(ColorDBL _color) { color = color; }
+
+    bool russianRoulette();
 
 private:
 

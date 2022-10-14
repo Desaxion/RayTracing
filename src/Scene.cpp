@@ -133,7 +133,7 @@ void Scene::buildScene() {
 
 	//Wall between f and a
 	sceneShapes.push_back(new Triangle(fLow, fHigh, aLow, gray));
-	sceneShapes.push_back(new Triangle(aLow, fHigh, aHigh, gray));
+	sceneShapes.push_back(new Triangle(aLow, fHigh, aHigh,gray));
 
 
 	//Floor

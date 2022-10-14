@@ -379,6 +379,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Camera.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\ColorDBL.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Def.h" />
+    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Functions.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Image.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Pixel.h" />
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Polygon.h" />

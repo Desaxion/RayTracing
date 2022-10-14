@@ -42,6 +42,13 @@ public:
 	// Constructor
 	Ray(dvec4 _start,dvec4 _end,dvec3 _dir);
 
+    double getLength() {
+            double x = start.x - end.x;
+            double y = start.y - end.y;
+            double z = start.z - end.z;
+            return sqrt(x * x + y * y + z * z);
+    }
+
     dvec4 getStart() const {return start;}
 
     dvec4 getEnd() const { return end; }
@@ -61,7 +68,7 @@ public:
     Ray getPrev() const {return *this->prev;}
     
     void setColor(ColorDBL _color) {color = _color;}
-    ColorDBL getGolor(){return color;}
+    ColorDBL getColor(){return color;}
     
     void bounce(dvec3 _normal, dvec4 _position);
 
@@ -84,7 +91,7 @@ private:
 	dvec4 end;
     dvec3 normDirection;
     dvec3 direction;
-    ColorDBL color = ColorDBL(dvec3(1.0));
+    ColorDBL color = ColorDBL(dvec3(0.0));
     
 	// direction från direction-klass?
 

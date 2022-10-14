@@ -42,6 +42,9 @@
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Def.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="E:\Dokument\LiU\TNCG15\RayTracing\RayTracing\include\Image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
