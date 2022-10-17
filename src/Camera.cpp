@@ -69,9 +69,6 @@ void Camera::rayGun(const Scene& _Scene) {
 			//This function will be called recursively for each ray that bounces.
             int intersectedSurface = -1;
 
-			if (pixelIndex == 638888) { //DEBUG
-				std::cout << "";
-			}
 
 			//for (int k = 0; k < RAYS_PER_PIXEL; k++) {
 				tempColor = shootRay(_Scene, *theRay, intersectedSurface);
@@ -80,9 +77,11 @@ void Camera::rayGun(const Scene& _Scene) {
 			//}
 
 			pixels[pixelIndex].setColor(theColor);
+
+
 			pixelIndex++;
             
-            
+			
 			//Check if the ray hit any of the surfaces
             
             
@@ -163,17 +162,17 @@ ColorDBL Camera::shootRay(const Scene& _Scene, Ray _ray, int intersectedSurface)
 				intersectionPoint = newIntersectionPoint;
                 
 				if (_Scene.sceneShapes[n]->getReflModel() == DIFFUSE) {
-					
+									double BRDF = 0.00000017;
 					ColorDBL theColor(_Scene.sceneShapes[n]->getColor());
-					double radiance = calculateLight(intersectionPoint, _Scene, _Scene.sceneShapes[n]->getNormDirection(intersectionPoint)); //Make this a vec3 instead, one component for each color
-					double BRDF = 0.001;
+					double radiance = calculateLight(intersectionPoint, _Scene, _Scene.sceneShapes[n]->getNormDirection(intersectionPoint),BRDF); //Make this a vec3 instead, one component for each color
+	
 					
-					theColor = theColor.getColor() * radiance * BRDF;
+					theColor = theColor.getColor() * radiance;
 
 					result = ColorDBL((theColor.getColor().r + result.getColor().r), (theColor.getColor().g + result.getColor().g), (theColor.getColor().b + result.getColor().b));
 
 					
-					if (russianRoulette()) {
+					/*if (russianRoulette()) {
 					//splitta rayen och bouncea vidare.
 
 						//Testa bounce med mirror bounce
@@ -186,7 +185,7 @@ ColorDBL Camera::shootRay(const Scene& _Scene, Ray _ray, int intersectedSurface)
 						ColorDBL((splittedColor.getColor().r + result.getColor().r), (splittedColor.getColor().g + result.getColor().g), (splittedColor.getColor().b + result.getColor().b));
 
 
-					}
+					}*/
 		
 				}
 				else if (_Scene.sceneShapes[n]->getReflModel() == MIRROR) {
@@ -216,9 +215,10 @@ double euclideanDistance(dvec4 _p1, dvec4 _p2){
     return sqrt(x*x + y*y + z*z);
 }
 
-double Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec3 _normal){
+double Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec3 _normal, double BRDF){
     //Sample random points on the lightsource
     const double L_e = 3200.0; //W/m2
+ 
     //Go over all lightsources
     double numerator = 0.0;
     double estimation = 0.0;
@@ -228,7 +228,8 @@ double Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec
         // if !inShade :
 		
             dvec4 pointOnLightsource = _Scene.lightSources[n]->getRandomPoint();
-			if (!inShade(pointOnLightsource, intersectionPoint, _Scene)) {
+			//dvec4 pointOnLightsource = dvec4(8.0, 1.0, 4.8, 1.0);
+			//if (!inShade(pointOnLightsource, intersectionPoint, _Scene)) {
             dvec3 di(intersectionPoint.x - pointOnLightsource.x,intersectionPoint.y - pointOnLightsource.y,intersectionPoint.z - pointOnLightsource.z);
             
             double diLength = euclideanDistance(intersectionPoint, pointOnLightsource);
@@ -236,12 +237,14 @@ double Camera::calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec
             double cosineOmegaX = (glm::dot(_normal,di))/diLength;
             double cosineOmegaY = (glm::dot(-_Scene.lightSources[n]->getNormDirection(intersectionPoint),di))/diLength;
 
-            numerator += (cosineOmegaX*cosineOmegaY)/(diLength*diLength);
-			}
+            numerator += BRDF*(cosineOmegaX*cosineOmegaY)/(diLength*diLength);
+			//}
         }
-        estimation += ((_Scene.lightSources[n]->getArea()*L_e)/NUMBER_OF_LIGHTSAMPLES)*numerator;
+        estimation += numerator;
+		estimation = ((_Scene.lightSources[n]->getArea() * L_e) / NUMBER_OF_LIGHTSAMPLES*1.0) * estimation;
     }
-    
+	estimation = estimation / 1.0 * _Scene.lightSources.size();
+
     return estimation;
 }
 

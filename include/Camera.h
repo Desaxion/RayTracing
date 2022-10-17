@@ -23,7 +23,7 @@ public:
 
     ColorDBL Camera::shootRay(const Scene& _Scene, Ray _ray, int intersectedSurface);
 
-    double calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec3 _normal);
+    double calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec3 _normal, double BRDF);
 
     bool inShade(dvec4 lightPoint, dvec4 shadowPoint,const Scene& _Scene);
     
@@ -45,7 +45,7 @@ private:
     Pixel* pixels = new Pixel[width*height];
    
     int NUMBER_OF_LIGHTSAMPLES = 10;
-    
+   
 };
 
 //The camera plane should be as follows:

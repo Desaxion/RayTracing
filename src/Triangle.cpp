@@ -97,7 +97,7 @@ dvec4 Triangle::getRandomPoint() {
     dvec4 randomPointOnTriangle;
     
     //The following code generate 3 random numbers that together add up to 1, aka the barycentric coordinates.
-    srand(std::time(NULL));
+    //srand(std::time(NULL));
     std::vector<double> v(3);
     std::generate(v.begin(), v.end(), rand);
     const double total = std::accumulate(v.begin(), v.end(), 0.0);
