@@ -2,6 +2,7 @@
 #include "Def.h"
 #include "Triangle.h"
 #include "Sphere.h"
+#include "Polygon.h"
 #include <vector>
 // View from above:
 // ^ = camera 1 and viewing direction (origo)

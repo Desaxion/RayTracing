@@ -4,6 +4,7 @@
 #include "Ray.h"
 #include "Surface.h"
 
+
 class Sphere : public Shape {
 public:
 

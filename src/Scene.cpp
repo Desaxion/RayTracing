@@ -63,55 +63,21 @@ void Scene::buildScene() {
 	        bLow  o------------------o aLow
 	
 	*/
-    //Wall between a and b
- /*   sceneTriangles.push_back(Triangle(aLow, aHigh, bLow, red));
-    sceneTriangles.push_back(Triangle(bLow, aHigh, bHigh, red));
 
-    //Wall between b and c
-    sceneTriangles.push_back(Triangle(bLow, bHigh, cLow, green));
-    sceneTriangles.push_back(Triangle(cLow, bHigh, cHigh, green));
-    
-    //Wall between c and d
-    sceneTriangles.push_back(Triangle(cLow, cHigh, dLow, blue));
-    sceneTriangles.push_back(Triangle(dLow, cHigh, dHigh, blue));
-	
-	//Wall between d and e
-	sceneTriangles.push_back(Triangle(dLow, dHigh, eLow, black));
-	sceneTriangles.push_back(Triangle(eLow, dHigh, eHigh, black));
-
-	//Wall between e and f
-	sceneTriangles.push_back(Triangle(eLow, eHigh, fLow, white));
-	sceneTriangles.push_back(Triangle(fLow, eHigh, fHigh, white));
-
-	//Wall between f and a
-	sceneTriangles.push_back(Triangle(fLow, fHigh, aLow, gray));
-	sceneTriangles.push_back(Triangle(aLow, fHigh, aHigh, gray));
-
-
-	//Floor
-	sceneTriangles.push_back(Triangle(aLow, bLow, fLow, yellow));
-	sceneTriangles.push_back(Triangle(bLow, cLow, fLow, yellow));
-	sceneTriangles.push_back(Triangle(fLow, cLow, eLow, yellow));
-	sceneTriangles.push_back(Triangle(cLow, dLow, eLow, yellow));
-
-	//Ceiling
-	sceneTriangles.push_back(Triangle(bHigh, aHigh, fHigh, magenta));
-	sceneTriangles.push_back(Triangle(cHigh, bHigh, fHigh, magenta));
-	sceneTriangles.push_back(Triangle(cHigh, fHigh, eHigh, magenta));
-	sceneTriangles.push_back(Triangle(dHigh, cHigh, eHigh, magenta));
-    
-
-	sceneSpheres.push_back(Sphere(dvec4(3.0, 0.0, 0.0, 1.0), 1.0, cyan));
-    
-	*/
-    
-    //Creating a mirror
-    //vec4 mLLow(0, 6.0, -5, 1.0), mLHigh(13.0, 6.0, 0.0, 1.0);
-    //vec4 mRLow(0, -6.0, -5, 1.0), mRHigh(13.0, -6.0, 0.0, 1.0);
     
     //Pushing shapes
-    //sceneShapes.push_back(new Sphere(dvec4(4.0, -1.0, 0.0, 1.0), 1.5, LIGHTSOURCE));
-    
+
+
+	//Creating pyramid
+	//position, height, width, angle
+	Polygon pyramid(dvec4(8.0, 4.0, -5.0, 1.0), 4.0, 3.0, 3.3*PI/2, white);
+	
+	for (Triangle* k : pyramid.sides) {
+		sceneShapes.push_back(k);
+	}
+
+	sceneShapes.push_back(new Sphere(dvec4(7.0, -1.0, 1.0, 1.0), 2, MIRROR));
+
     sceneShapes.push_back(new Triangle(aLow, aHigh, bLow, red));
 	sceneShapes.push_back(new Triangle(bLow, aHigh, bHigh,red));
 
@@ -124,16 +90,16 @@ void Scene::buildScene() {
 	sceneShapes.push_back(new Triangle(dLow, cHigh, dHigh, blue));
 
 	//Wall between d and e
-	sceneShapes.push_back(new Triangle(dLow, dHigh, eLow, black));
-	sceneShapes.push_back(new Triangle(eLow, dHigh, eHigh, black));
+	sceneShapes.push_back(new Triangle(dLow, dHigh, eLow, magenta));
+	sceneShapes.push_back(new Triangle(eLow, dHigh, eHigh,magenta));
 
 	//Wall between e and f
 	sceneShapes.push_back(new Triangle(eLow, eHigh, fLow, white));
 	sceneShapes.push_back(new Triangle(fLow, eHigh, fHigh, white));
 
 	//Wall between f and a
-	sceneShapes.push_back(new Triangle(fLow, fHigh, aLow, gray));
-	sceneShapes.push_back(new Triangle(aLow, fHigh, aHigh,gray));
+	sceneShapes.push_back(new Triangle(fLow, fHigh, aLow, cyan));
+	sceneShapes.push_back(new Triangle(aLow, fHigh, aHigh,cyan));
 
 
 	//Floor
@@ -147,6 +113,15 @@ void Scene::buildScene() {
 	sceneShapes.push_back(new Triangle(cHigh, bHigh, fHigh, magenta));
 	sceneShapes.push_back(new Triangle(cHigh, fHigh, eHigh, magenta));
 	sceneShapes.push_back(new Triangle(dHigh, cHigh, eHigh, magenta));
+
+
+	//for (int k = 0; k < pyramid.sides.size(); k++) {
+	//	sceneShapes.push_back(pyramid.sides[k]);
+	//}
+
+	
+
+
 
     //Creating the lightsource
     vec4 L1Low(10.0, 2.0, 4.8, 1.0), L1High(4.0, 2.0, 4.8, 1.0);

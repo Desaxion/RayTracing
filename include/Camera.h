@@ -21,21 +21,21 @@ public:
     
     void rayGun(const Scene &_Scene);
 
-    ColorDBL Camera::shootRay(const Scene& _Scene, Ray _ray, int intersectedSurface);
+    ColorDBL Camera::shootRay(const Scene& _Scene, Ray _ray, int intersectedSurface, int numberOfBounces, int splitted);
 
-    double calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec3 _normal, double BRDF);
+    double calculateLight(dvec4 intersectionPoint, const Scene& _Scene, dvec3 _normal, double BRDF, int intersectedSurface);
 
-    bool inShade(dvec4 lightPoint, dvec4 shadowPoint,const Scene& _Scene);
+    bool inShade(dvec4 lightPoint, dvec4 shadowPoint,const Scene& _Scene, int intersectedSurface);
     
     //void setColor(ColorDBL _color) { color = color; }
 
-    bool russianRoulette();
+    bool russianRoulette(int splits);
 
 private:
 
     //The camera position
-    dvec4 eye = vec4(-1.0,0.0,0.0,0.0);
-    double focalLength = 0.0;
+    dvec4 eye = vec4(-2.0,0.0,0.0,0.0);
+    double focalLength = -1.0;
     //resolution of side length in pixels
     int width = 800;
     int height = 800;
